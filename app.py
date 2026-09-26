@@ -5,7 +5,7 @@ import math
 import json
 from streamlit_geolocation import streamlit_geolocation
 
-# ========== 【session_state初始化】 ==========
+# ========== session_state初始化 ==========
 if "user_lat" not in st.session_state:
     st.session_state.user_lat = None
 if "user_lon" not in st.session_state:
@@ -192,8 +192,15 @@ st.divider()
 
 # 定位模块
 st.subheader("📍 获取当前位置")
-st.info("点击定位按钮，浏览器授权后，**自动切换线路+站点，加载该站上下行时刻表**")
+st.info("点击定位按钮，浏览器授权后，自动切换线路+站点；推荐手机Chrome/Edge浏览器，微信内置浏览器定位差！")
 location_result = streamlit_geolocation()
+
+# 手动输入经纬度备用方案（GPS不准的时候手动填）
+st.subheader("🛠️ 手动坐标调试（GPS不准时使用）")
+col_lat, col_lon = st.columns(2)
+manual_lat = col_lat.number_input("手动纬度lat", value=23.387119, format="%.6f")
+manual_lon = col_lon.number_input("手动经度lon", value=113.218389, format="%.6f")
+use_manual = st.button("使用上面手动坐标计算最近站点")
 
 # 定位成功处理
 if location_result and location_result.get("latitude"):
@@ -201,13 +208,47 @@ if location_result and location_result.get("latitude"):
     lon = location_result["longitude"]
     st.session_state.user_lat = lat
     st.session_state.user_lon = lon
+    st.info(f"📡 浏览器返回你的原始坐标：纬度 {lat:.6f}, 经度 {lon:.6f}")
+
+    # 计算全部站点距离，输出前5名
+    station_dist_list = []
+    for name, info in station_all.items():
+        dist = haversine(lat, lon, info["lat"], info["lon"])
+        station_dist_list.append( (dist, name) )
+    station_dist_list.sort()
+    st.write("🔍 距离由近到远 Top 5 站点：")
+    for d,name in station_dist_list[:5]:
+        st.write(f"- {name} ｜直线距离：{d:.0f} m")
+
     nearest_station_name, dist = find_nearest_station(lat, lon)
-    # 步行距离修正系数，直线距离 ×1.3，模拟道路步行距离
     real_walk_dist = dist * 1.3
     st.session_state.nearest_station = nearest_station_name
     st.session_state.distance_to_station = real_walk_dist
     st.session_state.auto_select = True
     st.success(f"✅ 定位成功！最近站点：【{nearest_station_name}】，估算步行距离 {real_walk_dist:.0f} m")
+
+# 手动坐标按钮触发
+if use_manual:
+    lat = manual_lat
+    lon = manual_lon
+    st.session_state.user_lat = lat
+    st.session_state.user_lon = lon
+    st.info(f"📡 使用手动输入坐标：纬度 {lat:.6f}, 经度 {lon:.6f}")
+    station_dist_list = []
+    for name, info in station_all.items():
+        dist = haversine(lat, lon, info["lat"], info["lon"])
+        station_dist_list.append( (dist, name) )
+    station_dist_list.sort()
+    st.write("🔍 距离由近到远 Top 5 站点：")
+    for d,name in station_dist_list[:5]:
+        st.write(f"- {name} ｜直线距离：{d:.0f} m")
+    nearest_station_name, dist = find_nearest_station(lat, lon)
+    real_walk_dist = dist * 1.3
+    st.session_state.nearest_station = nearest_station_name
+    st.session_state.distance_to_station = real_walk_dist
+    st.session_state.auto_select = True
+    st.success(f"✅ 手动坐标计算成功！最近站点：【{nearest_station_name}】，估算步行距离 {real_walk_dist:.0f} m")
+
 
 # 拿到全部线路列表
 line_list = list(line_data.keys())
@@ -219,18 +260,13 @@ if st.session_state.auto_select and st.session_state.nearest_station:
     auto_station_name = st.session_state.nearest_station
     station_meta = station_all[auto_station_name]
     station_lines = list(station_meta["lines"].keys())
-    # 默认取第一条线路（换乘站可以后续手动切换）
     auto_line = station_lines[0]
-    # 自动选中线路
     line_index = line_list.index(auto_line)
     selected_line = st.selectbox("【1】选择地铁线路", line_list, index=line_index)
-    # 该线路下的全部站点
     station_list_this_line = [s["station_name"] for s in line_data[selected_line]["stations"]]
-    # 自动选中最近站点
     station_index = station_list_this_line.index(auto_station_name)
     selected_station = st.selectbox("【2】选择站点", station_list_this_line, index=station_index)
 else:
-    # 没有定位，手动选择线路和站点
     selected_line = st.selectbox("【1】选择地铁线路", line_list)
     station_list_this_line = [s["station_name"] for s in line_data[selected_line]["stations"]]
     selected_station = st.selectbox("【2】选择站点", station_list_this_line)
@@ -240,28 +276,24 @@ walk_distance = 200.0
 if selected_station:
     station_meta = station_all[selected_station]
     station_line_names = list(station_meta["lines"].keys())
-    # 如果是换乘站
     if len(station_line_names) >1:
         st.info(f"✅ {selected_station} 是换乘站，请选择对应线路")
         selected_line = st.selectbox("选择该站点的线路", station_line_names)
     station_info = station_meta["lines"][selected_line]
 
-    # 班次标题
     current_interval = get_line_interval(selected_line, now)
     st.subheader("🚇 班次信息")
     st.markdown(f"当前线路：**{selected_line}**，当前时段自动发车间隔：**{current_interval} 分钟**")
 
-    # 距离
     if st.session_state.distance_to_station is not None:
         walk_distance = st.session_state.distance_to_station
-        st.markdown(f"📏 当前位置到【{selected_station}】估算步行距离：**{walk_distance:.0f} 米（定位自动计算，已乘1.3道路修正）**")
+        st.markdown(f"📏 当前位置到【{selected_station}】估算步行距离：**{walk_distance:.0f} 米（直线×1.3道路修正）**")
     else:
         walk_distance = st.number_input("当前位置 → 地铁站入口 的步行距离（米）", min_value=0.0, value=200.0, step=10.0)
 
     speed_label = st.selectbox("步行速度", list(speed_map.keys()), index=1)
     walk_speed = speed_map[speed_label]
 
-    # 时间计算
     auto_security_min = get_auto_security_time(now)
     auto_security_sec = auto_security_min * 60
     walk_to_entrance_sec = walk_distance / walk_speed
@@ -313,4 +345,4 @@ if selected_station:
             st.warning("⚠️ 当前时段无后续列车")
 
 st.divider()
-st.caption("说明：距离为估算步行距离（直线×1.3）；定位成功后自动切换线路与站点，自动加载上下行时刻表。")
+st.caption("说明：距离为估算步行距离（直线×1.3）；定位成功后自动切换线路与站点。微信内置浏览器定位很差，推荐Chrome/Edge浏览器！")
