@@ -1,0 +1,3068 @@
+{
+    "1号线": {
+        "name": "广州地铁1号线",
+        "desc": "西塱 ↔ 广州东站",
+        "stations": [
+            {
+                "station_name": "西塱",
+                "lat": 23.0640,
+                "lon": 113.2150,
+                "dirA_first": "06:00",
+                "dirA_last": "22:55",
+                "dirB_first": "06:10",
+                "dirB_last": "23:30"
+            },
+            {
+                "station_name": "坑口",
+                "lat": 23.0788,
+                "lon": 113.2240,
+                "dirA_first": "06:02",
+                "dirA_last": "22:57",
+                "dirB_first": "06:08",
+                "dirB_last": "23:28"
+            },
+            {
+                "station_name": "花地湾",
+                "lat": 23.0862,
+                "lon": 113.2310,
+                "dirA_first": "06:04",
+                "dirA_last": "22:59",
+                "dirB_first": "06:06",
+                "dirB_last": "23:26"
+            },
+            {
+                "station_name": "芳村",
+                "lat": 23.0932,
+                "lon": 113.2380,
+                "dirA_first": "06:06",
+                "dirA_last": "23:01",
+                "dirB_first": "06:04",
+                "dirB_last": "23:24"
+            },
+            {
+                "station_name": "黄沙",
+                "lat": 23.1038,
+                "lon": 113.2425,
+                "dirA_first": "06:08",
+                "dirA_last": "23:04",
+                "dirB_first": "06:02",
+                "dirB_last": "23:21"
+            },
+            {
+                "station_name": "长寿路",
+                "lat": 23.1120,
+                "lon": 113.2465,
+                "dirA_first": "06:10",
+                "dirA_last": "23:06",
+                "dirB_first": "06:00",
+                "dirB_last": "23:19"
+            },
+            {
+                "station_name": "陈家祠",
+                "lat": 23.1175,
+                "lon": 113.2510,
+                "dirA_first": "06:12",
+                "dirA_last": "23:08",
+                "dirB_first": "06:14",
+                "dirB_last": "23:17"
+            },
+            {
+                "station_name": "西门口",
+                "lat": 23.1215,
+                "lon": 113.2560,
+                "dirA_first": "06:14",
+                "dirA_last": "23:10",
+                "dirB_first": "06:12",
+                "dirB_last": "23:15"
+            },
+            {
+                "station_name": "公园前",
+                "lat": 23.1250,
+                "lon": 113.2610,
+                "dirA_first": "06:15",
+                "dirA_last": "23:12",
+                "dirB_first": "06:10",
+                "dirB_last": "23:13"
+            },
+            {
+                "station_name": "农讲所",
+                "lat": 23.1278,
+                "lon": 113.2660,
+                "dirA_first": "06:17",
+                "dirA_last": "23:14",
+                "dirB_first": "06:08",
+                "dirB_last": "23:11"
+            },
+            {
+                "station_name": "烈士陵园",
+                "lat": 23.1300,
+                "lon": 113.2705,
+                "dirA_first": "06:19",
+                "dirA_last": "23:16",
+                "dirB_first": "06:06",
+                "dirB_last": "23:09"
+            },
+            {
+                "station_name": "东山口",
+                "lat": 23.1325,
+                "lon": 113.2750,
+                "dirA_first": "06:21",
+                "dirA_last": "23:18",
+                "dirB_first": "06:04",
+                "dirB_last": "23:07"
+            },
+            {
+                "station_name": "杨箕",
+                "lat": 23.1348,
+                "lon": 113.2800,
+                "dirA_first": "06:23",
+                "dirA_last": "23:20",
+                "dirB_first": "06:02",
+                "dirB_last": "23:05"
+            },
+            {
+                "station_name": "体育西路",
+                "lat": 23.1380,
+                "lon": 113.2860,
+                "dirA_first": "06:25",
+                "dirA_last": "23:22",
+                "dirB_first": "06:00",
+                "dirB_last": "23:03"
+            },
+            {
+                "station_name": "体育中心",
+                "lat": 23.1405,
+                "lon": 113.2910,
+                "dirA_first": "06:27",
+                "dirA_last": "23:24",
+                "dirB_first": "06:12",
+                "dirB_last": "23:01"
+            },
+            {
+                "station_name": "广州东站",
+                "lat": 23.1460,
+                "lon": 113.3020,
+                "dirA_first": "06:30",
+                "dirA_last": "23:27",
+                "dirB_first": "06:10",
+                "dirB_last": "23:00"
+            }
+        ]
+    },
+    "2号线": {
+        "name": "广州地铁2号线",
+        "desc": "广州南站 ↔ 嘉禾望岗",
+        "stations": [
+            {
+                "station_name": "广州南站",
+                "lat": 22.9988,
+                "lon": 113.2645,
+                "dirA_first": "06:00",
+                "dirA_last": "23:30",
+                "dirB_first": "06:00",
+                "dirB_last": "23:35"
+            },
+            {
+                "station_name": "石壁",
+                "lat": 23.0170,
+                "lon": 113.2510,
+                "dirA_first": "06:02",
+                "dirA_last": "23:32",
+                "dirB_first": "06:25",
+                "dirB_last": "23:31"
+            },
+            {
+                "station_name": "会江",
+                "lat": 23.0370,
+                "lon": 113.2410,
+                "dirA_first": "06:05",
+                "dirA_last": "23:35",
+                "dirB_first": "06:23",
+                "dirB_last": "23:28"
+            },
+            {
+                "station_name": "南浦",
+                "lat": 23.0580,
+                "lon": 113.2330,
+                "dirA_first": "06:08",
+                "dirA_last": "23:37",
+                "dirB_first": "06:20",
+                "dirB_last": "23:25"
+            },
+            {
+                "station_name": "洛溪",
+                "lat": 23.0740,
+                "lon": 113.2280,
+                "dirA_first": "06:10",
+                "dirA_last": "23:39",
+                "dirB_first": "06:18",
+                "dirB_last": "23:23"
+            },
+            {
+                "station_name": "南洲",
+                "lat": 23.0960,
+                "lon": 113.2320,
+                "dirA_first": "06:13",
+                "dirA_last": "23:42",
+                "dirB_first": "06:15",
+                "dirB_last": "23:20"
+            },
+            {
+                "station_name": "东晓南",
+                "lat": 23.1070,
+                "lon": 113.2400,
+                "dirA_first": "06:15",
+                "dirA_last": "23:44",
+                "dirB_first": "06:28",
+                "dirB_last": "23:18"
+            },
+            {
+                "station_name": "江泰路",
+                "lat": 23.1160,
+                "lon": 113.2470,
+                "dirA_first": "06:17",
+                "dirA_last": "23:47",
+                "dirB_first": "06:26",
+                "dirB_last": "23:16"
+            },
+            {
+                "station_name": "昌岗",
+                "lat": 23.1230,
+                "lon": 113.2520,
+                "dirA_first": "06:19",
+                "dirA_last": "23:49",
+                "dirB_first": "06:24",
+                "dirB_last": "23:14"
+            },
+            {
+                "station_name": "江南西",
+                "lat": 23.1290,
+                "lon": 113.2560,
+                "dirA_first": "06:21",
+                "dirA_last": "23:51",
+                "dirB_first": "06:22",
+                "dirB_last": "23:12"
+            },
+            {
+                "station_name": "市二宫",
+                "lat": 23.1340,
+                "lon": 113.2600,
+                "dirA_first": "06:23",
+                "dirA_last": "23:53",
+                "dirB_first": "06:20",
+                "dirB_last": "23:10"
+            },
+            {
+                "station_name": "海珠广场",
+                "lat": 23.1375,
+                "lon": 113.2640,
+                "dirA_first": "06:25",
+                "dirA_last": "23:55",
+                "dirB_first": "06:18",
+                "dirB_last": "23:08"
+            },
+            {
+                "station_name": "公园前",
+                "lat": 23.1250,
+                "lon": 113.2610,
+                "dirA_first": "06:27",
+                "dirA_last": "23:57",
+                "dirB_first": "06:15",
+                "dirB_last": "23:06"
+            },
+            {
+                "station_name": "纪念堂",
+                "lat": 23.1280,
+                "lon": 113.2540,
+                "dirA_first": "06:29",
+                "dirA_last": "00:00",
+                "dirB_first": "06:13",
+                "dirB_last": "23:04"
+            },
+            {
+                "station_name": "越秀公园",
+                "lat": 23.1320,
+                "lon": 113.2480,
+                "dirA_first": "06:31",
+                "dirA_last": "00:02",
+                "dirB_first": "06:11",
+                "dirB_last": "23:02"
+            },
+            {
+                "station_name": "广州火车站",
+                "lat": 23.1410,
+                "lon": 113.2410,
+                "dirA_first": "06:33",
+                "dirA_last": "00:04",
+                "dirB_first": "06:09",
+                "dirB_last": "23:00"
+            },
+            {
+                "station_name": "三元里",
+                "lat": 23.1480,
+                "lon": 113.2370,
+                "dirA_first": "06:35",
+                "dirA_last": "00:06",
+                "dirB_first": "06:07",
+                "dirB_last": "22:58"
+            },
+            {
+                "station_name": "飞翔公园",
+                "lat": 23.1570,
+                "lon": 113.2320,
+                "dirA_first": "06:37",
+                "dirA_last": "00:08",
+                "dirB_first": "06:05",
+                "dirB_last": "22:56"
+            },
+            {
+                "station_name": "白云公园",
+                "lat": 23.1640,
+                "lon": 113.2270,
+                "dirA_first": "06:39",
+                "dirA_last": "00:10",
+                "dirB_first": "06:03",
+                "dirB_last": "22:54"
+            },
+            {
+                "station_name": "白云文化广场",
+                "lat": 23.1710,
+                "lon": 113.2220,
+                "dirA_first": "06:41",
+                "dirA_last": "00:12",
+                "dirB_first": "06:01",
+                "dirB_last": "22:52"
+            },
+            {
+                "station_name": "萧岗",
+                "lat": 23.1820,
+                "lon": 113.2180,
+                "dirA_first": "06:43",
+                "dirA_last": "00:14",
+                "dirB_first": "06:00",
+                "dirB_last": "22:50"
+            },
+            {
+                "station_name": "江夏",
+                "lat": 23.1940,
+                "lon": 113.2140,
+                "dirA_first": "06:45",
+                "dirA_last": "00:16",
+                "dirB_first": "06:02",
+                "dirB_last": "22:48"
+            },
+            {
+                "station_name": "黄边",
+                "lat": 23.2060,
+                "lon": 113.2110,
+                "dirA_first": "06:47",
+                "dirA_last": "00:18",
+                "dirB_first": "06:04",
+                "dirB_last": "22:46"
+            },
+            {
+                "station_name": "嘉禾望岗",
+                "lat": 23.2170,
+                "lon": 113.2070,
+                "dirA_first": "06:50",
+                "dirA_last": "00:20",
+                "dirB_first": "06:00",
+                "dirB_last": "22:45"
+            }
+        ]
+    },
+    "3号线": {
+        "name": "广州地铁3号线",
+        "desc": "番禺广场 ↔ 天河客运站",
+        "stations": [
+            {
+                "station_name": "番禺广场",
+                "lat": 22.9360,
+                "lon": 113.3440,
+                "dirA_first": "06:00",
+                "dirA_last": "22:55",
+                "dirB_first": "06:10",
+                "dirB_last": "23:30"
+            },
+            {
+                "station_name": "市桥",
+                "lat": 22.9480,
+                "lon": 113.3260,
+                "dirA_first": "06:02",
+                "dirA_last": "22:57",
+                "dirB_first": "06:08",
+                "dirB_last": "23:28"
+            },
+            {
+                "station_name": "汉溪长隆",
+                "lat": 22.9880,
+                "lon": 113.3110,
+                "dirA_first": "06:05",
+                "dirA_last": "23:00",
+                "dirB_first": "06:05",
+                "dirB_last": "23:25"
+            },
+            {
+                "station_name": "大石",
+                "lat": 23.0210,
+                "lon": 113.3010,
+                "dirA_first": "06:08",
+                "dirA_last": "23:03",
+                "dirB_first": "06:02",
+                "dirB_last": "23:22"
+            },
+            {
+                "station_name": "厦滘",
+                "lat": 23.0460,
+                "lon": 113.2960,
+                "dirA_first": "06:10",
+                "dirA_last": "23:05",
+                "dirB_first": "06:00",
+                "dirB_last": "23:20"
+            },
+            {
+                "station_name": "沥滘",
+                "lat": 23.0690,
+                "lon": 113.2920,
+                "dirA_first": "06:13",
+                "dirA_last": "23:08",
+                "dirB_first": "06:12",
+                "dirB_last": "23:17"
+            },
+            {
+                "station_name": "大塘",
+                "lat": 23.0900,
+                "lon": 113.2910,
+                "dirA_first": "06:15",
+                "dirA_last": "23:10",
+                "dirB_first": "06:10",
+                "dirB_last": "23:15"
+            },
+            {
+                "station_name": "客村",
+                "lat": 23.1060,
+                "lon": 113.2910,
+                "dirA_first": "06:17",
+                "dirA_last": "23:12",
+                "dirB_first": "06:08",
+                "dirB_last": "23:13"
+            },
+            {
+                "station_name": "广州塔",
+                "lat": 23.1140,
+                "lon": 113.2940,
+                "dirA_first": "06:19",
+                "dirA_last": "23:14",
+                "dirB_first": "06:06",
+                "dirB_last": "23:11"
+            },
+            {
+                "station_name": "珠江新城",
+                "lat": 23.1210,
+                "lon": 113.3000,
+                "dirA_first": "06:21",
+                "dirA_last": "23:16",
+                "dirB_first": "06:04",
+                "dirB_last": "23:09"
+            },
+            {
+                "station_name": "体育西路",
+                "lat": 23.1380,
+                "lon": 113.2860,
+                "dirA_first": "06:24",
+                "dirA_last": "23:19",
+                "dirB_first": "06:00",
+                "dirB_last": "23:06"
+            },
+            {
+                "station_name": "石牌桥",
+                "lat": 23.1420,
+                "lon": 113.2940,
+                "dirA_first": "06:26",
+                "dirA_last": "23:21",
+                "dirB_first": "06:13",
+                "dirB_last": "23:04"
+            },
+            {
+                "station_name": "岗顶",
+                "lat": 23.1450,
+                "lon": 113.2980,
+                "dirA_first": "06:28",
+                "dirA_last": "23:23",
+                "dirB_first": "06:11",
+                "dirB_last": "23:02"
+            },
+            {
+                "station_name": "华师",
+                "lat": 23.1480,
+                "lon": 113.3040,
+                "dirA_first": "06:30",
+                "dirA_last": "23:25",
+                "dirB_first": "06:09",
+                "dirB_last": "23:00"
+            },
+            {
+                "station_name": "五山",
+                "lat": 23.1520,
+                "lon": 113.3100,
+                "dirA_first": "06:32",
+                "dirA_last": "23:27",
+                "dirB_first": "06:07",
+                "dirB_last": "22:58"
+            },
+            {
+                "station_name": "天河客运站",
+                "lat": 23.1560,
+                "lon": 113.3170,
+                "dirA_first": "06:35",
+                "dirA_last": "23:30",
+                "dirB_first": "06:10",
+                "dirB_last": "22:55"
+            }
+        ]
+    },
+    "3号线北延段": {
+        "name": "广州地铁3号线北延段",
+        "desc": "体育西路 ↔ 机场北",
+        "stations": [
+            {
+                "station_name": "体育西路",
+                "lat": 23.1380,
+                "lon": 113.2860,
+                "dirA_first": "06:00",
+                "dirA_last": "23:30",
+                "dirB_first": "06:00",
+                "dirB_last": "23:15"
+            },
+            {
+                "station_name": "林和西",
+                "lat": 23.1430,
+                "lon": 113.2980,
+                "dirA_first": "06:02",
+                "dirA_last": "23:32",
+                "dirB_first": "06:27",
+                "dirB_last": "23:13"
+            },
+            {
+                "station_name": "广州东站",
+                "lat": 23.1460,
+                "lon": 113.3020,
+                "dirA_first": "06:04",
+                "dirA_last": "23:34",
+                "dirB_first": "06:25",
+                "dirB_last": "23:11"
+            },
+            {
+                "station_name": "燕塘",
+                "lat": 23.1570,
+                "lon": 113.3100,
+                "dirA_first": "06:06",
+                "dirA_last": "23:36",
+                "dirB_first": "06:23",
+                "dirB_last": "23:09"
+            },
+            {
+                "station_name": "梅花园",
+                "lat": 23.1720,
+                "lon": 113.3040,
+                "dirA_first": "06:08",
+                "dirA_last": "23:38",
+                "dirB_first": "06:21",
+                "dirB_last": "23:07"
+            },
+            {
+                "station_name": "同和",
+                "lat": 23.1870,
+                "lon": 113.2960,
+                "dirA_first": "06:10",
+                "dirA_last": "23:40",
+                "dirB_first": "06:19",
+                "dirB_last": "23:05"
+            },
+            {
+                "station_name": "京溪南方医院",
+                "lat": 23.1990,
+                "lon": 113.2880,
+                "dirA_first": "06:12",
+                "dirA_last": "23:42",
+                "dirB_first": "06:17",
+                "dirB_last": "23:03"
+            },
+            {
+                "station_name": "嘉禾望岗",
+                "lat": 23.2170,
+                "lon": 113.2070,
+                "dirA_first": "06:15",
+                "dirA_last": "23:45",
+                "dirB_first": "06:14",
+                "dirB_last": "23:00"
+            },
+            {
+                "station_name": "龙归",
+                "lat": 23.2440,
+                "lon": 113.2720,
+                "dirA_first": "06:18",
+                "dirA_last": "23:48",
+                "dirB_first": "06:11",
+                "dirB_last": "22:57"
+            },
+            {
+                "station_name": "人和",
+                "lat": 23.2770,
+                "lon": 113.2610,
+                "dirA_first": "06:21",
+                "dirA_last": "23:51",
+                "dirB_first": "06:08",
+                "dirB_last": "22:54"
+            },
+            {
+                "station_name": "高增",
+                "lat": 23.2643,
+                "lon": 113.2896,
+                "dirA_first": "06:24",
+                "dirA_last": "23:54",
+                "dirB_first": "06:06",
+                "dirB_last": "22:51"
+            },
+            {
+                "station_name": "机场南",
+                "lat": 23.3080,
+                "lon": 113.2800,
+                "dirA_first": "06:27",
+                "dirA_last": "23:57",
+                "dirB_first": "06:03",
+                "dirB_last": "22:48"
+            },
+            {
+                "station_name": "机场北",
+                "lat": 23.3270,
+                "lon": 113.2840,
+                "dirA_first": "06:30",
+                "dirA_last": "00:00",
+                "dirB_first": "06:00",
+                "dirB_last": "22:45"
+            }
+        ]
+    },
+    "4号线": {
+        "name": "广州地铁4号线",
+        "desc": "南沙客运港 ↔ 黄村",
+        "stations": [
+            {
+                "station_name": "南沙客运港",
+                "lat": 22.6230,
+                "lon": 113.6140,
+                "dirA_first": "06:00",
+                "dirA_last": "22:30",
+                "dirB_first": "06:00",
+                "dirB_last": "23:15"
+            },
+            {
+                "station_name": "南横",
+                "lat": 22.6520,
+                "lon": 113.5940,
+                "dirA_first": "06:02",
+                "dirA_last": "22:32",
+                "dirB_first": "06:18",
+                "dirB_last": "23:13"
+            },
+            {
+                "station_name": "塘坑",
+                "lat": 22.6780,
+                "lon": 113.5740,
+                "dirA_first": "06:05",
+                "dirA_last": "22:35",
+                "dirB_first": "06:15",
+                "dirB_last": "23:10"
+            },
+            {
+                "station_name": "大涌",
+                "lat": 22.7050,
+                "lon": 113.5530,
+                "dirA_first": "06:07",
+                "dirA_last": "22:37",
+                "dirB_first": "06:12",
+                "dirB_last": "23:08"
+            },
+            {
+                "station_name": "广隆",
+                "lat": 22.7280,
+                "lon": 113.5310,
+                "dirA_first": "06:09",
+                "dirA_last": "22:39",
+                "dirB_first": "06:10",
+                "dirB_last": "23:06"
+            },
+            {
+                "station_name": "飞沙角",
+                "lat": 22.7480,
+                "lon": 113.5090,
+                "dirA_first": "06:11",
+                "dirA_last": "22:41",
+                "dirB_first": "06:08",
+                "dirB_last": "23:04"
+            },
+            {
+                "station_name": "金洲",
+                "lat": 22.7650,
+                "lon": 113.4880,
+                "dirA_first": "06:13",
+                "dirA_last": "22:43",
+                "dirB_first": "06:06",
+                "dirB_last": "23:02"
+            },
+            {
+                "station_name": "蕉门",
+                "lat": 22.7790,
+                "lon": 113.4660,
+                "dirA_first": "06:15",
+                "dirA_last": "22:45",
+                "dirB_first": "06:04",
+                "dirB_last": "23:00"
+            },
+            {
+                "station_name": "黄阁",
+                "lat": 22.8020,
+                "lon": 113.4440,
+                "dirA_first": "06:17",
+                "dirA_last": "22:47",
+                "dirB_first": "06:02",
+                "dirB_last": "22:58"
+            },
+            {
+                "station_name": "黄阁汽车城",
+                "lat": 22.8220,
+                "lon": 113.4210,
+                "dirA_first": "06:19",
+                "dirA_last": "22:49",
+                "dirB_first": "06:00",
+                "dirB_last": "22:56"
+            },
+            {
+                "station_name": "庆盛",
+                "lat": 22.8600,
+                "lon": 113.3840,
+                "dirA_first": "06:22",
+                "dirA_last": "22:52",
+                "dirB_first": "06:17",
+                "dirB_last": "22:53"
+            },
+            {
+                "station_name": "东涌",
+                "lat": 22.9040,
+                "lon": 113.3480,
+                "dirA_first": "06:25",
+                "dirA_last": "22:55",
+                "dirB_first": "06:14",
+                "dirB_last": "22:50"
+            },
+            {
+                "station_name": "低涌",
+                "lat": 22.9460,
+                "lon": 113.3200,
+                "dirA_first": "06:28",
+                "dirA_last": "22:58",
+                "dirB_first": "06:11",
+                "dirB_last": "22:47"
+            },
+            {
+                "station_name": "海傍",
+                "lat": 22.9780,
+                "lon": 113.3000,
+                "dirA_first": "06:31",
+                "dirA_last": "23:01",
+                "dirB_first": "06:08",
+                "dirB_last": "22:44"
+            },
+            {
+                "station_name": "石碁",
+                "lat": 23.0140,
+                "lon": 113.2840,
+                "dirA_first": "06:34",
+                "dirA_last": "23:04",
+                "dirB_first": "06:05",
+                "dirB_last": "22:41"
+            },
+            {
+                "station_name": "新造",
+                "lat": 23.0480,
+                "lon": 113.2760,
+                "dirA_first": "06:37",
+                "dirA_last": "23:07",
+                "dirB_first": "06:02",
+                "dirB_last": "22:38"
+            },
+            {
+                "station_name": "大学城北",
+                "lat": 23.0680,
+                "lon": 113.2670,
+                "dirA_first": "06:40",
+                "dirA_last": "23:10",
+                "dirB_first": "06:10",
+                "dirB_last": "22:35"
+            },
+            {
+                "station_name": "大学城南",
+                "lat": 23.0780,
+                "lon": 113.2580,
+                "dirA_first": "06:42",
+                "dirA_last": "23:12",
+                "dirB_first": "06:08",
+                "dirB_last": "22:33"
+            },
+            {
+                "station_name": "官洲",
+                "lat": 23.0900,
+                "lon": 113.2640,
+                "dirA_first": "06:44",
+                "dirA_last": "23:14",
+                "dirB_first": "06:06",
+                "dirB_last": "22:31"
+            },
+            {
+                "station_name": "万胜围",
+                "lat": 23.1060,
+                "lon": 113.2770,
+                "dirA_first": "06:46",
+                "dirA_last": "23:16",
+                "dirB_first": "06:04",
+                "dirB_last": "22:29"
+            },
+            {
+                "station_name": "车陂南",
+                "lat": 23.1200,
+                "lon": 113.2920,
+                "dirA_first": "06:48",
+                "dirA_last": "23:18",
+                "dirB_first": "06:02",
+                "dirB_last": "22:27"
+            },
+            {
+                "station_name": "车陂",
+                "lat": 23.1250,
+                "lon": 113.2980,
+                "dirA_first": "06:50",
+                "dirA_last": "23:20",
+                "dirB_first": "06:00",
+                "dirB_last": "22:25"
+            },
+            {
+                "station_name": "黄村",
+                "lat": 23.1310,
+                "lon": 113.3080,
+                "dirA_first": "06:52",
+                "dirA_last": "23:22",
+                "dirB_first": "06:00",
+                "dirB_last": "22:23"
+            }
+        ]
+    },
+    "5号线": {
+        "name": "广州地铁5号线",
+        "desc": "滘口 ↔ 黄埔新港",
+        "stations": [
+            {
+                "station_name": "滘口",
+                "lat": 23.1100,
+                "lon": 113.2240,
+                "dirA_first": "06:15",
+                "dirA_last": "23:15",
+                "dirB_first": "06:00",
+                "dirB_last": "22:40"
+            },
+            {
+                "station_name": "坦尾",
+                "lat": 23.1140,
+                "lon": 113.2310,
+                "dirA_first": "06:17",
+                "dirA_last": "23:17",
+                "dirB_first": "06:19",
+                "dirB_last": "22:42"
+            },
+            {
+                "station_name": "中山八",
+                "lat": 23.1170,
+                "lon": 113.2370,
+                "dirA_first": "06:19",
+                "dirA_last": "23:19",
+                "dirB_first": "06:16",
+                "dirB_last": "22:44"
+            },
+            {
+                "station_name": "西场",
+                "lat": 23.1220,
+                "lon": 113.2410,
+                "dirA_first": "06:21",
+                "dirA_last": "23:21",
+                "dirB_first": "06:14",
+                "dirB_last": "22:46"
+            },
+            {
+                "station_name": "西村",
+                "lat": 23.1270,
+                "lon": 113.2440,
+                "dirA_first": "06:23",
+                "dirA_last": "23:23",
+                "dirB_first": "06:12",
+                "dirB_last": "22:48"
+            },
+            {
+                "station_name": "广州火车站",
+                "lat": 23.1410,
+                "lon": 113.2410,
+                "dirA_first": "06:25",
+                "dirA_last": "23:25",
+                "dirB_first": "06:10",
+                "dirB_last": "22:50"
+            },
+            {
+                "station_name": "小北",
+                "lat": 23.1450,
+                "lon": 113.2480,
+                "dirA_first": "06:27",
+                "dirA_last": "23:27",
+                "dirB_first": "06:08",
+                "dirB_last": "22:52"
+            },
+            {
+                "station_name": "淘金",
+                "lat": 23.1470,
+                "lon": 113.2570,
+                "dirA_first": "06:29",
+                "dirA_last": "23:29",
+                "dirB_first": "06:06",
+                "dirB_last": "22:54"
+            },
+            {
+                "station_name": "区庄",
+                "lat": 23.1450,
+                "lon": 113.2680,
+                "dirA_first": "06:31",
+                "dirA_last": "23:31",
+                "dirB_first": "06:04",
+                "dirB_last": "22:56"
+            },
+            {
+                "station_name": "动物园",
+                "lat": 23.1430,
+                "lon": 113.2760,
+                "dirA_first": "06:33",
+                "dirA_last": "23:33",
+                "dirB_first": "06:02",
+                "dirB_last": "22:58"
+            },
+            {
+                "station_name": "杨箕",
+                "lat": 23.1348,
+                "lon": 113.2800,
+                "dirA_first": "06:35",
+                "dirA_last": "23:35",
+                "dirB_first": "06:00",
+                "dirB_last": "23:00"
+            },
+            {
+                "station_name": "五羊邨",
+                "lat": 23.1270,
+                "lon": 113.2850,
+                "dirA_first": "06:37",
+                "dirA_last": "23:37",
+                "dirB_first": "06:13",
+                "dirB_last": "23:02"
+            },
+            {
+                "station_name": "珠江新城",
+                "lat": 23.1210,
+                "lon": 113.3000,
+                "dirA_first": "06:39",
+                "dirA_last": "23:39",
+                "dirB_first": "06:11",
+                "dirB_last": "23:04"
+            },
+            {
+                "station_name": "猎德",
+                "lat": 23.1180,
+                "lon": 113.3070,
+                "dirA_first": "06:41",
+                "dirA_last": "23:41",
+                "dirB_first": "06:09",
+                "dirB_last": "23:06"
+            },
+            {
+                "station_name": "潭村",
+                "lat": 23.1150,
+                "lon": 113.3140,
+                "dirA_first": "06:43",
+                "dirA_last": "23:43",
+                "dirB_first": "06:07",
+                "dirB_last": "23:08"
+            },
+            {
+                "station_name": "员村",
+                "lat": 23.1110,
+                "lon": 113.3230,
+                "dirA_first": "06:45",
+                "dirA_last": "23:45",
+                "dirB_first": "06:05",
+                "dirB_last": "23:10"
+            },
+            {
+                "station_name": "科韵路",
+                "lat": 23.1080,
+                "lon": 113.3330,
+                "dirA_first": "06:47",
+                "dirA_last": "23:47",
+                "dirB_first": "06:03",
+                "dirB_last": "23:12"
+            },
+            {
+                "station_name": "车陂南",
+                "lat": 23.1200,
+                "lon": 113.2920,
+                "dirA_first": "06:49",
+                "dirA_last": "23:49",
+                "dirB_first": "06:01",
+                "dirB_last": "23:14"
+            },
+            {
+                "station_name": "东圃",
+                "lat": 23.1030,
+                "lon": 113.3480,
+                "dirA_first": "06:51",
+                "dirA_last": "23:51",
+                "dirB_first": "06:12",
+                "dirB_last": "23:16"
+            },
+            {
+                "station_name": "三溪",
+                "lat": 23.0980,
+                "lon": 113.3590,
+                "dirA_first": "06:53",
+                "dirA_last": "23:53",
+                "dirB_first": "06:10",
+                "dirB_last": "23:18"
+            },
+            {
+                "station_name": "鱼珠",
+                "lat": 23.0940,
+                "lon": 113.3700,
+                "dirA_first": "06:55",
+                "dirA_last": "23:55",
+                "dirB_first": "06:08",
+                "dirB_last": "23:20"
+            },
+            {
+                "station_name": "大沙地",
+                "lat": 23.0870,
+                "lon": 113.3810,
+                "dirA_first": "06:57",
+                "dirA_last": "23:57",
+                "dirB_first": "06:06",
+                "dirB_last": "23:22"
+            },
+            {
+                "station_name": "大沙东",
+                "lat": 23.0810,
+                "lon": 113.3910,
+                "dirA_first": "07:00",
+                "dirA_last": "00:00",
+                "dirB_first": "06:04",
+                "dirB_last": "23:24"
+            },
+            {
+                "station_name": "文冲",
+                "lat": 23.0740,
+                "lon": 113.4020,
+                "dirA_first": "07:02",
+                "dirA_last": "00:02",
+                "dirB_first": "06:02",
+                "dirB_last": "23:26"
+            },
+            {
+                "station_name": "双沙",
+                "lat": 23.0680,
+                "lon": 113.4140,
+                "dirA_first": "07:04",
+                "dirA_last": "00:04",
+                "dirB_first": "06:00",
+                "dirB_last": "23:28"
+            },
+            {
+                "station_name": "庙头",
+                "lat": 23.0610,
+                "lon": 113.4260,
+                "dirA_first": "07:06",
+                "dirA_last": "00:06",
+                "dirB_first": "06:15",
+                "dirB_last": "23:30"
+            },
+            {
+                "station_name": "夏园",
+                "lat": 23.0540,
+                "lon": 113.4380,
+                "dirA_first": "07:08",
+                "dirA_last": "00:08",
+                "dirB_first": "06:13",
+                "dirB_last": "23:32"
+            },
+            {
+                "station_name": "保盈大道",
+                "lat": 23.0470,
+                "lon": 113.4500,
+                "dirA_first": "07:10",
+                "dirA_last": "00:10",
+                "dirB_first": "06:11",
+                "dirB_last": "23:34"
+            },
+            {
+                "station_name": "黄埔新港",
+                "lat": 23.0400,
+                "lon": 113.4620,
+                "dirA_first": "07:12",
+                "dirA_last": "00:12",
+                "dirB_first": "06:00",
+                "dirB_last": "23:36"
+            }
+        ]
+    },
+    "6号线": {
+        "name": "广州地铁6号线",
+        "desc": "浔峰岗 ↔ 香雪",
+        "stations": [
+            {
+                "station_name": "浔峰岗",
+                "lat": 23.1480,
+                "lon": 113.1820,
+                "dirA_first": "06:00",
+                "dirA_last": "22:50",
+                "dirB_first": "06:00",
+                "dirB_last": "22:50"
+            },
+            {
+                "station_name": "横沙",
+                "lat": 23.1440,
+                "lon": 113.1890,
+                "dirA_first": "06:01",
+                "dirA_last": "22:51",
+                "dirB_first": "06:24",
+                "dirB_last": "23:56"
+            },
+            {
+                "station_name": "沙贝",
+                "lat": 23.1400,
+                "lon": 113.1960,
+                "dirA_first": "06:02",
+                "dirA_last": "22:52",
+                "dirB_first": "06:22",
+                "dirB_last": "23:55"
+            },
+            {
+                "station_name": "河沙",
+                "lat": 23.1340,
+                "lon": 113.2040,
+                "dirA_first": "06:05",
+                "dirA_last": "22:55",
+                "dirB_first": "06:19",
+                "dirB_last": "23:52"
+            },
+            {
+                "station_name": "坦尾",
+                "lat": 23.1140,
+                "lon": 113.2310,
+                "dirA_first": "06:08",
+                "dirA_last": "22:58",
+                "dirB_first": "06:17",
+                "dirB_last": "23:50"
+            },
+            {
+                "station_name": "如意坊",
+                "lat": 23.1080,
+                "lon": 113.2370,
+                "dirA_first": "06:10",
+                "dirA_last": "23:00",
+                "dirB_first": "06:14",
+                "dirB_last": "23:48"
+            },
+            {
+                "station_name": "黄沙",
+                "lat": 23.1038,
+                "lon": 113.2425,
+                "dirA_first": "06:12",
+                "dirA_last": "23:02",
+                "dirB_first": "06:12",
+                "dirB_last": "23:46"
+            },
+            {
+                "station_name": "文化公园",
+                "lat": 23.1070,
+                "lon": 113.2480,
+                "dirA_first": "06:14",
+                "dirA_last": "23:04",
+                "dirB_first": "06:10",
+                "dirB_last": "23:44"
+            },
+            {
+                "station_name": "一德路",
+                "lat": 23.1120,
+                "lon": 113.2530,
+                "dirA_first": "06:16",
+                "dirA_last": "23:06",
+                "dirB_first": "06:08",
+                "dirB_last": "23:42"
+            },
+            {
+                "station_name": "海珠广场",
+                "lat": 23.1375,
+                "lon": 113.2640,
+                "dirA_first": "06:18",
+                "dirA_last": "23:08",
+                "dirB_first": "06:06",
+                "dirB_last": "23:40"
+            },
+            {
+                "station_name": "北京路",
+                "lat": 23.1260,
+                "lon": 113.2660,
+                "dirA_first": "06:20",
+                "dirA_last": "23:10",
+                "dirB_first": "06:04",
+                "dirB_last": "23:38"
+            },
+            {
+                "station_name": "团一大广场",
+                "lat": 23.1290,
+                "lon": 113.2720,
+                "dirA_first": "06:22",
+                "dirA_last": "23:12",
+                "dirB_first": "06:02",
+                "dirB_last": "23:36"
+            },
+            {
+                "station_name": "东湖",
+                "lat": 23.1320,
+                "lon": 113.2780,
+                "dirA_first": "06:24",
+                "dirA_last": "23:14",
+                "dirB_first": "06:00",
+                "dirB_last": "23:34"
+            },
+            {
+                "station_name": "东山口",
+                "lat": 23.1325,
+                "lon": 113.2750,
+                "dirA_first": "06:26",
+                "dirA_last": "23:16",
+                "dirB_first": "06:13",
+                "dirB_last": "23:32"
+            },
+            {
+                "station_name": "区庄",
+                "lat": 23.1450,
+                "lon": 113.2680,
+                "dirA_first": "06:28",
+                "dirA_last": "23:18",
+                "dirB_first": "06:11",
+                "dirB_last": "23:30"
+            },
+            {
+                "station_name": "黄花岗",
+                "lat": 23.1500,
+                "lon": 113.2640,
+                "dirA_first": "06:30",
+                "dirA_last": "23:20",
+                "dirB_first": "06:09",
+                "dirB_last": "23:28"
+            },
+            {
+                "station_name": "沙河顶",
+                "lat": 23.1540,
+                "lon": 113.2700,
+                "dirA_first": "06:32",
+                "dirA_last": "23:22",
+                "dirB_first": "06:07",
+                "dirB_last": "23:26"
+            },
+            {
+                "station_name": "沙河",
+                "lat": 23.1570,
+                "lon": 113.2760,
+                "dirA_first": "06:34",
+                "dirA_last": "23:24",
+                "dirB_first": "06:05",
+                "dirB_last": "23:24"
+            },
+            {
+                "station_name": "天平架",
+                "lat": 23.1620,
+                "lon": 113.2820,
+                "dirA_first": "06:36",
+                "dirA_last": "23:26",
+                "dirB_first": "06:03",
+                "dirB_last": "23:22"
+            },
+            {
+                "station_name": "燕塘",
+                "lat": 23.1570,
+                "lon": 113.3100,
+                "dirA_first": "06:38",
+                "dirA_last": "23:28",
+                "dirB_first": "06:01",
+                "dirB_last": "23:20"
+            },
+            {
+                "station_name": "天河客运站",
+                "lat": 23.1560,
+                "lon": 113.3170,
+                "dirA_first": "06:40",
+                "dirA_last": "23:30",
+                "dirB_first": "06:10",
+                "dirB_last": "23:18"
+            },
+            {
+                "station_name": "长湴",
+                "lat": 23.1620,
+                "lon": 113.3260,
+                "dirA_first": "06:42",
+                "dirA_last": "23:32",
+                "dirB_first": "06:08",
+                "dirB_last": "23:16"
+            },
+            {
+                "station_name": "植物园",
+                "lat": 23.1690,
+                "lon": 113.3340,
+                "dirA_first": "06:44",
+                "dirA_last": "23:34",
+                "dirB_first": "06:06",
+                "dirB_last": "23:14"
+            },
+            {
+                "station_name": "龙洞",
+                "lat": 23.1780,
+                "lon": 113.3420,
+                "dirA_first": "06:46",
+                "dirA_last": "23:36",
+                "dirB_first": "06:04",
+                "dirB_last": "23:12"
+            },
+            {
+                "station_name": "柯木塱",
+                "lat": 23.1870,
+                "lon": 113.3500,
+                "dirA_first": "06:48",
+                "dirA_last": "23:38",
+                "dirB_first": "06:02",
+                "dirB_last": "23:10"
+            },
+            {
+                "station_name": "高塘石",
+                "lat": 23.1960,
+                "lon": 113.3580,
+                "dirA_first": "06:50",
+                "dirA_last": "23:40",
+                "dirB_first": "06:00",
+                "dirB_last": "23:08"
+            },
+            {
+                "station_name": "黄陂",
+                "lat": 23.2060,
+                "lon": 113.3660,
+                "dirA_first": "06:52",
+                "dirA_last": "23:42",
+                "dirB_first": "06:15",
+                "dirB_last": "23:06"
+            },
+            {
+                "station_name": "金峰",
+                "lat": 23.2140,
+                "lon": 113.3740,
+                "dirA_first": "06:54",
+                "dirA_last": "23:44",
+                "dirB_first": "06:13",
+                "dirB_last": "23:04"
+            },
+            {
+                "station_name": "暹岗",
+                "lat": 23.2220,
+                "lon": 113.3820,
+                "dirA_first": "06:56",
+                "dirA_last": "23:46",
+                "dirB_first": "06:11",
+                "dirB_last": "23:02"
+            },
+            {
+                "station_name": "苏元",
+                "lat": 23.2290,
+                "lon": 113.3900,
+                "dirA_first": "06:58",
+                "dirA_last": "23:48",
+                "dirB_first": "06:09",
+                "dirB_last": "23:00"
+            },
+            {
+                "station_name": "萝岗",
+                "lat": 23.2360,
+                "lon": 113.3980,
+                "dirA_first": "07:00",
+                "dirA_last": "23:50",
+                "dirB_first": "06:07",
+                "dirB_last": "22:58"
+            },
+            {
+                "station_name": "香雪",
+                "lat": 23.2430,
+                "lon": 113.4060,
+                "dirA_first": "07:02",
+                "dirA_last": "23:52",
+                "dirB_first": "06:00",
+                "dirB_last": "22:55"
+            }
+        ]
+    },
+    "7号线": {
+        "name": "广州地铁7号线",
+        "desc": "美的大道 ↔ 大学城南",
+        "stations": [
+            {
+                "station_name": "美的大道",
+                "lat": 22.9410,
+                "lon": 113.2100,
+                "dirA_first": "06:00",
+                "dirA_last": "23:10",
+                "dirB_first": "06:10",
+                "dirB_last": "23:15"
+            },
+            {
+                "station_name": "北滘公园",
+                "lat": 22.9470,
+                "lon": 113.2180,
+                "dirA_first": "06:02",
+                "dirA_last": "23:12",
+                "dirB_first": "06:08",
+                "dirB_last": "23:13"
+            },
+            {
+                "station_name": "高村",
+                "lat": 22.9530,
+                "lon": 113.2260,
+                "dirA_first": "06:04",
+                "dirA_last": "23:14",
+                "dirB_first": "06:06",
+                "dirB_last": "23:11"
+            },
+            {
+                "station_name": "陈村",
+                "lat": 22.9600,
+                "lon": 113.2340,
+                "dirA_first": "06:06",
+                "dirA_last": "23:16",
+                "dirB_first": "06:04",
+                "dirB_last": "23:09"
+            },
+            {
+                "station_name": "陈村北",
+                "lat": 22.9670,
+                "lon": 113.2420,
+                "dirA_first": "06:08",
+                "dirA_last": "23:18",
+                "dirB_first": "06:02",
+                "dirB_last": "23:07"
+            },
+            {
+                "station_name": "石壁",
+                "lat": 23.0170,
+                "lon": 113.2510,
+                "dirA_first": "06:10",
+                "dirA_last": "23:20",
+                "dirB_first": "06:00",
+                "dirB_last": "23:05"
+            },
+            {
+                "station_name": "广州南站",
+                "lat": 22.9988,
+                "lon": 113.2645,
+                "dirA_first": "06:12",
+                "dirA_last": "23:22",
+                "dirB_first": "06:14",
+                "dirB_last": "23:03"
+            },
+            {
+                "station_name": "谢村",
+                "lat": 22.9800,
+                "lon": 113.2740,
+                "dirA_first": "06:14",
+                "dirA_last": "23:24",
+                "dirB_first": "06:12",
+                "dirB_last": "23:01"
+            },
+            {
+                "station_name": "钟村",
+                "lat": 22.9640,
+                "lon": 113.2820,
+                "dirA_first": "06:16",
+                "dirA_last": "23:26",
+                "dirB_first": "06:10",
+                "dirB_last": "22:59"
+            },
+            {
+                "station_name": "汉溪长隆",
+                "lat": 22.9880,
+                "lon": 113.3110,
+                "dirA_first": "06:18",
+                "dirA_last": "23:28",
+                "dirB_first": "06:08",
+                "dirB_last": "22:57"
+            },
+            {
+                "station_name": "员岗",
+                "lat": 23.0100,
+                "lon": 113.3200,
+                "dirA_first": "06:20",
+                "dirA_last": "23:30",
+                "dirB_first": "06:06",
+                "dirB_last": "22:55"
+            },
+            {
+                "station_name": "板桥",
+                "lat": 23.0320,
+                "lon": 113.3260,
+                "dirA_first": "06:22",
+                "dirA_last": "23:32",
+                "dirB_first": "06:04",
+                "dirB_last": "22:53"
+            },
+            {
+                "station_name": "大学城南",
+                "lat": 23.0780,
+                "lon": 113.2580,
+                "dirA_first": "06:24",
+                "dirA_last": "23:34",
+                "dirB_first": "06:10",
+                "dirB_last": "22:51"
+            }
+        ]
+    },
+    "8号线": {
+        "name": "广州地铁8号线",
+        "desc": "滘心 ↔ 万胜围",
+        "stations": [
+            {
+                "station_name": "滘心",
+                "lat": 23.2240,
+                "lon": 113.2120,
+                "dirA_first": "06:00",
+                "dirA_last": "23:00",
+                "dirB_first": "06:00",
+                "dirB_last": "23:00"
+            },
+            {
+                "station_name": "亭岗",
+                "lat": 23.2130,
+                "lon": 113.2150,
+                "dirA_first": "06:02",
+                "dirA_last": "23:02",
+                "dirB_first": "06:24",
+                "dirB_last": "23:58"
+            },
+            {
+                "station_name": "石井",
+                "lat": 23.2020,
+                "lon": 113.2180,
+                "dirA_first": "06:04",
+                "dirA_last": "23:04",
+                "dirB_first": "06:22",
+                "dirB_last": "23:56"
+            },
+            {
+                "station_name": "小坪",
+                "lat": 23.1910,
+                "lon": 113.2210,
+                "dirA_first": "06:06",
+                "dirA_last": "23:06",
+                "dirB_first": "06:20",
+                "dirB_last": "23:54"
+            },
+            {
+                "station_name": "石潭",
+                "lat": 23.1800,
+                "lon": 113.2240,
+                "dirA_first": "06:08",
+                "dirA_last": "23:08",
+                "dirB_first": "06:18",
+                "dirB_last": "23:52"
+            },
+            {
+                "station_name": "聚龙",
+                "lat": 23.1690,
+                "lon": 113.2270,
+                "dirA_first": "06:10",
+                "dirA_last": "23:10",
+                "dirB_first": "06:16",
+                "dirB_last": "23:50"
+            },
+            {
+                "station_name": "同德",
+                "lat": 23.1580,
+                "lon": 113.2300,
+                "dirA_first": "06:12",
+                "dirA_last": "23:12",
+                "dirB_first": "06:14",
+                "dirB_last": "23:48"
+            },
+            {
+                "station_name": "上步",
+                "lat": 23.1470,
+                "lon": 113.2330,
+                "dirA_first": "06:14",
+                "dirA_last": "23:14",
+                "dirB_first": "06:12",
+                "dirB_last": "23:46"
+            },
+            {
+                "station_name": "鹅掌坦",
+                "lat": 23.1360,
+                "lon": 113.2360,
+                "dirA_first": "06:16",
+                "dirA_last": "23:16",
+                "dirB_first": "06:10",
+                "dirB_last": "23:44"
+            },
+            {
+                "station_name": "西村",
+                "lat": 23.1270,
+                "lon": 113.2440,
+                "dirA_first": "06:18",
+                "dirA_last": "23:18",
+                "dirB_first": "06:08",
+                "dirB_last": "23:42"
+            },
+            {
+                "station_name": "彩虹桥",
+                "lat": 23.1190,
+                "lon": 113.2480,
+                "dirA_first": "06:20",
+                "dirA_last": "23:20",
+                "dirB_first": "06:06",
+                "dirB_last": "23:40"
+            },
+            {
+                "station_name": "陈家祠",
+                "lat": 23.1175,
+                "lon": 113.2510,
+                "dirA_first": "06:22",
+                "dirA_last": "23:22",
+                "dirB_first": "06:04",
+                "dirB_last": "23:38"
+            },
+            {
+                "station_name": "华林寺",
+                "lat": 23.1120,
+                "lon": 113.2550,
+                "dirA_first": "06:24",
+                "dirA_last": "23:24",
+                "dirB_first": "06:02",
+                "dirB_last": "23:36"
+            },
+            {
+                "station_name": "文化公园",
+                "lat": 23.1070,
+                "lon": 113.2480,
+                "dirA_first": "06:26",
+                "dirA_last": "23:26",
+                "dirB_first": "06:00",
+                "dirB_last": "23:34"
+            },
+            {
+                "station_name": "同福西",
+                "lat": 23.1020,
+                "lon": 113.2440,
+                "dirA_first": "06:28",
+                "dirA_last": "23:28",
+                "dirB_first": "06:13",
+                "dirB_last": "23:32"
+            },
+            {
+                "station_name": "沙园",
+                "lat": 23.0940,
+                "lon": 113.2460,
+                "dirA_first": "06:30",
+                "dirA_last": "23:30",
+                "dirB_first": "06:11",
+                "dirB_last": "23:30"
+            },
+            {
+                "station_name": "宝岗大道",
+                "lat": 23.0990,
+                "lon": 113.2520,
+                "dirA_first": "06:32",
+                "dirA_last": "23:32",
+                "dirB_first": "06:09",
+                "dirB_last": "23:28"
+            },
+            {
+                "station_name": "昌岗",
+                "lat": 23.1230,
+                "lon": 113.2520,
+                "dirA_first": "06:34",
+                "dirA_last": "23:34",
+                "dirB_first": "06:07",
+                "dirB_last": "23:26"
+            },
+            {
+                "station_name": "晓港",
+                "lat": 23.1180,
+                "lon": 113.2560,
+                "dirA_first": "06:36",
+                "dirA_last": "23:36",
+                "dirB_first": "06:05",
+                "dirB_last": "23:24"
+            },
+            {
+                "station_name": "中大",
+                "lat": 23.1090,
+                "lon": 113.2640,
+                "dirA_first": "06:38",
+                "dirA_last": "23:38",
+                "dirB_first": "06:03",
+                "dirB_last": "23:22"
+            },
+            {
+                "station_name": "鹭江",
+                "lat": 23.1040,
+                "lon": 113.2720,
+                "dirA_first": "06:40",
+                "dirA_last": "23:40",
+                "dirB_first": "06:01",
+                "dirB_last": "23:20"
+            },
+            {
+                "station_name": "客村",
+                "lat": 23.1060,
+                "lon": 113.2910,
+                "dirA_first": "06:42",
+                "dirA_last": "23:42",
+                "dirB_first": "06:10",
+                "dirB_last": "23:18"
+            },
+            {
+                "station_name": "赤岗",
+                "lat": 23.1020,
+                "lon": 113.2980,
+                "dirA_first": "06:44",
+                "dirA_last": "23:44",
+                "dirB_first": "06:08",
+                "dirB_last": "23:16"
+            },
+            {
+                "station_name": "磨碟沙",
+                "lat": 23.0980,
+                "lon": 113.3050,
+                "dirA_first": "06:46",
+                "dirA_last": "23:46",
+                "dirB_first": "06:06",
+                "dirB_last": "23:14"
+            },
+            {
+                "station_name": "新港东",
+                "lat": 23.0940,
+                "lon": 113.3120,
+                "dirA_first": "06:48",
+                "dirA_last": "23:48",
+                "dirB_first": "06:04",
+                "dirB_last": "23:12"
+            },
+            {
+                "station_name": "琶洲",
+                "lat": 23.0900,
+                "lon": 113.3190,
+                "dirA_first": "06:50",
+                "dirA_last": "23:50",
+                "dirB_first": "06:02",
+                "dirB_last": "23:10"
+            },
+            {
+                "station_name": "万胜围",
+                "lat": 23.1060,
+                "lon": 113.2770,
+                "dirA_first": "06:52",
+                "dirA_last": "23:52",
+                "dirB_first": "06:00",
+                "dirB_last": "23:08"
+            }
+        ]
+    },
+    "9号线": {
+        "name": "广州地铁9号线",
+        "desc": "飞鹅岭 ↔ 高增",
+        "stations": [
+            {
+                "station_name": "飞鹅岭",
+                "lat": 23.3814,
+                "lon": 113.1722,
+                "dirA_first": "06:00",
+                "dirA_last": "22:30",
+                "dirB_first": "06:00",
+                "dirB_last": "22:30"
+            },
+            {
+                "station_name": "花都汽车城",
+                "lat": 23.3667,
+                "lon": 113.1833,
+                "dirA_first": "06:02",
+                "dirA_last": "22:32",
+                "dirB_first": "06:29",
+                "dirB_last": "23:38"
+            },
+            {
+                "station_name": "广州北站",
+                "lat": 23.3522,
+                "lon": 113.1976,
+                "dirA_first": "06:05",
+                "dirA_last": "22:35",
+                "dirB_first": "06:26",
+                "dirB_last": "23:35"
+            },
+            {
+                "station_name": "花城路",
+                "lat": 23.3447,
+                "lon": 113.2093,
+                "dirA_first": "06:07",
+                "dirA_last": "22:37",
+                "dirB_first": "06:24",
+                "dirB_last": "23:33"
+            },
+            {
+                "station_name": "花果山公园",
+                "lat": 23.3374,
+                "lon": 113.2204,
+                "dirA_first": "06:09",
+                "dirA_last": "22:39",
+                "dirB_first": "06:22",
+                "dirB_last": "23:31"
+            },
+            {
+                "station_name": "花都广场",
+                "lat": 23.3286,
+                "lon": 113.2317,
+                "dirA_first": "06:12",
+                "dirA_last": "22:42",
+                "dirB_first": "06:19",
+                "dirB_last": "23:28"
+            },
+            {
+                "station_name": "马鞍山公园",
+                "lat": 23.3194,
+                "lon": 113.2431,
+                "dirA_first": "06:15",
+                "dirA_last": "22:45",
+                "dirB_first": "06:16",
+                "dirB_last": "23:25"
+            },
+            {
+                "station_name": "莲塘",
+                "lat": 23.3076,
+                "lon": 113.2548,
+                "dirA_first": "06:17",
+                "dirA_last": "22:47",
+                "dirB_first": "06:14",
+                "dirB_last": "23:23"
+            },
+            {
+                "station_name": "清㘵",
+                "lat": 23.2945,
+                "lon": 113.2664,
+                "dirA_first": "06:19",
+                "dirA_last": "22:49",
+                "dirB_first": "06:12",
+                "dirB_last": "23:21"
+            },
+            {
+                "station_name": "清塘",
+                "lat": 23.2791,
+                "lon": 113.2785,
+                "dirA_first": "06:22",
+                "dirA_last": "22:52",
+                "dirB_first": "06:09",
+                "dirB_last": "23:18"
+            },
+            {
+                "station_name": "高增",
+                "lat": 23.2643,
+                "lon": 113.2896,
+                "dirA_first": "06:25",
+                "dirA_last": "22:55",
+                "dirB_first": "06:06",
+                "dirB_last": "23:15"
+            }
+        ]
+    },
+    "10号线": {
+        "name": "广州地铁10号线",
+        "desc": "西塱 ↔ 天河客运站",
+        "stations": [
+            {
+                "station_name": "西塱",
+                "lat": 23.0640,
+                "lon": 113.2150,
+                "dirA_first": "06:00",
+                "dirA_last": "22:50",
+                "dirB_first": "06:10",
+                "dirB_last": "23:30"
+            },
+            {
+                "station_name": "石围塘",
+                "lat": 23.0820,
+                "lon": 113.2270,
+                "dirA_first": "06:03",
+                "dirA_last": "22:53",
+                "dirB_first": "06:07",
+                "dirB_last": "23:27"
+            },
+            {
+                "station_name": "芳村",
+                "lat": 23.0932,
+                "lon": 113.2380,
+                "dirA_first": "06:05",
+                "dirA_last": "22:55",
+                "dirB_first": "06:05",
+                "dirB_last": "23:25"
+            },
+            {
+                "station_name": "大冲口",
+                "lat": 23.0980,
+                "lon": 113.2440,
+                "dirA_first": "06:07",
+                "dirA_last": "22:57",
+                "dirB_first": "06:03",
+                "dirB_last": "23:23"
+            },
+            {
+                "station_name": "沙涌",
+                "lat": 23.0920,
+                "lon": 113.2500,
+                "dirA_first": "06:09",
+                "dirA_last": "22:59",
+                "dirB_first": "06:01",
+                "dirB_last": "23:21"
+            },
+            {
+                "station_name": "鹤洞东",
+                "lat": 23.0870,
+                "lon": 113.2550,
+                "dirA_first": "06:11",
+                "dirA_last": "23:01",
+                "dirB_first": "06:14",
+                "dirB_last": "23:19"
+            },
+            {
+                "station_name": "棣园",
+                "lat": 23.0830,
+                "lon": 113.2600,
+                "dirA_first": "06:13",
+                "dirA_last": "23:03",
+                "dirB_first": "06:12",
+                "dirB_last": "23:17"
+            },
+            {
+                "station_name": "燕岗",
+                "lat": 23.0880,
+                "lon": 113.2640,
+                "dirA_first": "06:15",
+                "dirA_last": "23:05",
+                "dirB_first": "06:10",
+                "dirB_last": "23:15"
+            },
+            {
+                "station_name": "江泰路",
+                "lat": 23.1160,
+                "lon": 113.2470,
+                "dirA_first": "06:17",
+                "dirA_last": "23:07",
+                "dirB_first": "06:08",
+                "dirB_last": "23:13"
+            },
+            {
+                "station_name": "东晓南",
+                "lat": 23.1070,
+                "lon": 113.2400,
+                "dirA_first": "06:19",
+                "dirA_last": "23:09",
+                "dirB_first": "06:06",
+                "dirB_last": "23:11"
+            },
+            {
+                "station_name": "五凤",
+                "lat": 23.1120,
+                "lon": 113.2450,
+                "dirA_first": "06:21",
+                "dirA_last": "23:11",
+                "dirB_first": "06:04",
+                "dirB_last": "23:09"
+            },
+            {
+                "station_name": "中大南门",
+                "lat": 23.1080,
+                "lon": 113.2600,
+                "dirA_first": "06:23",
+                "dirA_last": "23:13",
+                "dirB_first": "06:02",
+                "dirB_last": "23:07"
+            },
+            {
+                "station_name": "滨江东",
+                "lat": 23.1140,
+                "lon": 113.2720,
+                "dirA_first": "06:25",
+                "dirA_last": "23:15",
+                "dirB_first": "06:00",
+                "dirB_last": "23:05"
+            },
+            {
+                "station_name": "东湖",
+                "lat": 23.1320,
+                "lon": 113.2780,
+                "dirA_first": "06:27",
+                "dirA_last": "23:17",
+                "dirB_first": "06:12",
+                "dirB_last": "23:03"
+            },
+            {
+                "station_name": "寺右新马路",
+                "lat": 23.1360,
+                "lon": 113.2840,
+                "dirA_first": "06:29",
+                "dirA_last": "23:19",
+                "dirB_first": "06:10",
+                "dirB_last": "23:01"
+            },
+            {
+                "station_name": "杨箕",
+                "lat": 23.1348,
+                "lon": 113.2800,
+                "dirA_first": "06:31",
+                "dirA_last": "23:21",
+                "dirB_first": "06:08",
+                "dirB_last": "22:59"
+            },
+            {
+                "station_name": "广州大道中",
+                "lat": 23.1390,
+                "lon": 113.2880,
+                "dirA_first": "06:33",
+                "dirA_last": "23:23",
+                "dirB_first": "06:06",
+                "dirB_last": "22:57"
+            },
+            {
+                "station_name": "体育西路",
+                "lat": 23.1380,
+                "lon": 113.2860,
+                "dirA_first": "06:35",
+                "dirA_last": "23:25",
+                "dirB_first": "06:04",
+                "dirB_last": "22:55"
+            },
+            {
+                "station_name": "石牌桥",
+                "lat": 23.1420,
+                "lon": 113.2940,
+                "dirA_first": "06:37",
+                "dirA_last": "23:27",
+                "dirB_first": "06:02",
+                "dirB_last": "22:53"
+            },
+            {
+                "station_name": "岗顶",
+                "lat": 23.1450,
+                "lon": 113.2980,
+                "dirA_first": "06:39",
+                "dirA_last": "23:29",
+                "dirB_first": "06:00",
+                "dirB_last": "22:51"
+            }
+        ]
+    },
+    "11号线（环线）": {
+        "name": "广州地铁11号线（环线）",
+        "desc": "外环：顺时针；内环：逆时针",
+        "stations": [
+            {
+                "station_name": "广州火车站",
+                "lat": 23.1478,
+                "lon": 113.2684,
+                "first_outer": "06:00",
+                "last_outer": "23:30",
+                "first_inner": "06:00",
+                "last_inner": "23:30"
+            },
+            {
+                "station_name": "梓元岗",
+                "lat": 23.1451,
+                "lon": 113.2742,
+                "first_outer": "06:03",
+                "last_outer": "23:33",
+                "first_inner": "05:57",
+                "last_inner": "23:27"
+            },
+            {
+                "station_name": "云台花园",
+                "lat": 23.1408,
+                "lon": 113.2821,
+                "first_outer": "06:06",
+                "last_outer": "23:36",
+                "first_inner": "05:54",
+                "last_inner": "23:24"
+            },
+            {
+                "station_name": "大金钟",
+                "lat": 23.1354,
+                "lon": 113.2883,
+                "first_outer": "06:09",
+                "last_outer": "23:39",
+                "first_inner": "05:51",
+                "last_inner": "23:21"
+            },
+            {
+                "station_name": "中医药大学",
+                "lat": 23.1282,
+                "lon": 113.2944,
+                "first_outer": "06:12",
+                "last_outer": "23:42",
+                "first_inner": "05:48",
+                "last_inner": "23:18"
+            },
+            {
+                "station_name": "沙河",
+                "lat": 23.1320,
+                "lon": 113.3010,
+                "first_outer": "06:15",
+                "last_outer": "23:45",
+                "first_inner": "05:45",
+                "last_inner": "23:15"
+            },
+            {
+                "station_name": "广州东站",
+                "lat": 23.1402,
+                "lon": 113.3271,
+                "first_outer": "06:18",
+                "last_outer": "23:48",
+                "first_inner": "05:42",
+                "last_inner": "23:12"
+            },
+            {
+                "station_name": "员村",
+                "lat": 23.1143,
+                "lon": 113.3403,
+                "first_outer": "06:24",
+                "last_outer": "23:54",
+                "first_inner": "05:36",
+                "last_inner": "23:06"
+            },
+            {
+                "station_name": "琶洲",
+                "lat": 23.1014,
+                "lon": 113.3312,
+                "first_outer": "06:28",
+                "last_outer": "23:58",
+                "first_inner": "05:32",
+                "last_inner": "23:02"
+            },
+            {
+                "station_name": "赤沙",
+                "lat": 23.0847,
+                "lon": 113.3186,
+                "first_outer": "06:32",
+                "last_outer": "00:02",
+                "first_inner": "05:28",
+                "last_inner": "22:58"
+            },
+            {
+                "station_name": "石榴岗",
+                "lat": 23.0734,
+                "lon": 113.3042,
+                "first_outer": "06:35",
+                "last_outer": "00:05",
+                "first_inner": "05:25",
+                "last_inner": "22:55"
+            },
+            {
+                "station_name": "龙潭",
+                "lat": 23.0648,
+                "lon": 113.2879,
+                "first_outer": "06:38",
+                "last_outer": "00:08",
+                "first_inner": "05:22",
+                "last_inner": "22:52"
+            },
+            {
+                "station_name": "逸景路",
+                "lat": 23.0686,
+                "lon": 113.2704,
+                "first_outer": "06:41",
+                "last_outer": "00:11",
+                "first_inner": "05:19",
+                "last_inner": "22:49"
+            },
+            {
+                "station_name": "上涌",
+                "lat": 23.0762,
+                "lon": 113.2578,
+                "first_outer": "06:44",
+                "last_outer": "00:14",
+                "first_inner": "05:16",
+                "last_inner": "22:46"
+            },
+            {
+                "station_name": "江泰路",
+                "lat": 23.0843,
+                "lon": 113.2486,
+                "first_outer": "06:47",
+                "last_outer": "00:17",
+                "first_inner": "05:13",
+                "last_inner": "22:43"
+            },
+            {
+                "station_name": "工业大道中",
+                "lat": 23.0937,
+                "lon": 113.2401,
+                "first_outer": "06:50",
+                "last_outer": "00:20",
+                "first_inner": "05:10",
+                "last_inner": "22:40"
+            },
+            {
+                "station_name": "芳村",
+                "lat": 23.1042,
+                "lon": 113.2226,
+                "first_outer": "06:56",
+                "last_outer": "00:26",
+                "first_inner": "05:04",
+                "last_inner": "22:34"
+            },
+            {
+                "station_name": "大冲口",
+                "lat": 23.1114,
+                "lon": 113.2278,
+                "first_outer": "06:59",
+                "last_outer": "00:29",
+                "first_inner": "05:01",
+                "last_inner": "22:31"
+            },
+            {
+                "station_name": "沙涌",
+                "lat": 23.1187,
+                "lon": 113.2344,
+                "first_outer": "07:02",
+                "last_outer": "00:32",
+                "first_inner": "04:58",
+                "last_inner": "22:28"
+            },
+            {
+                "station_name": "梓元岗",
+                "lat": 23.1451,
+                "lon": 113.2742,
+                "first_outer": "07:08",
+                "last_outer": "00:38",
+                "first_inner": "04:52",
+                "last_inner": "22:22"
+            }
+        ]
+    },
+    "12号线": {
+        "name": "广州地铁12号线",
+        "desc": "浔峰岗 ↔ 广州体育馆；二沙岛 ↔ 大学城南（中段暂未开通）",
+        "stations": [
+            {
+                "station_name": "浔峰岗",
+                "lat": 23.1742,
+                "lon": 113.1941,
+                "first_up": "06:00",
+                "last_up": "23:30",
+                "first_down": "06:00",
+                "last_down": "23:30"
+            },
+            {
+                "station_name": "里横路",
+                "lat": 23.1639,
+                "lon": 113.2003,
+                "first_up": "06:03",
+                "last_up": "23:33",
+                "first_down": "05:57",
+                "last_down": "23:27"
+            },
+            {
+                "station_name": "槎头",
+                "lat": 23.1551,
+                "lon": 113.2074,
+                "first_up": "06:06",
+                "last_up": "23:36",
+                "first_down": "05:54",
+                "last_down": "23:24"
+            },
+            {
+                "station_name": "聚龙",
+                "lat": 23.1462,
+                "lon": 113.2148,
+                "first_up": "06:09",
+                "last_up": "23:39",
+                "first_down": "05:51",
+                "last_down": "23:21"
+            },
+            {
+                "station_name": "白云站",
+                "lat": 23.1347,
+                "lon": 113.2273,
+                "first_up": "06:13",
+                "last_up": "23:43",
+                "first_down": "05:47",
+                "last_down": "23:17"
+            },
+            {
+                "station_name": "广州体育馆",
+                "lat": 23.1311,
+                "lon": 113.2612,
+                "first_up": "06:18",
+                "last_up": "23:48",
+                "first_down": "05:42",
+                "last_down": "23:12"
+            },
+            {
+                "station_name": "二沙岛",
+                "lat": 23.1125,
+                "lon": 113.2904,
+                "first_up": "06:00",
+                "last_up": "23:30",
+                "first_down": "06:00",
+                "last_down": "23:30"
+            },
+            {
+                "station_name": "岭南广场",
+                "lat": 23.1034,
+                "lon": 113.2976,
+                "first_up": "06:03",
+                "last_up": "23:33",
+                "first_down": "05:57",
+                "last_down": "23:27"
+            },
+            {
+                "station_name": "赤岗",
+                "lat": 23.0971,
+                "lon": 113.3114,
+                "first_up": "06:06",
+                "last_up": "23:36",
+                "first_down": "05:54",
+                "last_down": "23:24"
+            },
+            {
+                "station_name": "大学城北",
+                "lat": 23.0568,
+                "lon": 113.3741,
+                "first_up": "06:15",
+                "last_up": "23:45",
+                "first_down": "05:45",
+                "last_down": "23:15"
+            },
+            {
+                "station_name": "大学城南",
+                "lat": 23.0426,
+                "lon": 113.3817,
+                "first_up": "06:18",
+                "last_up": "23:48",
+                "first_down": "05:42",
+                "last_down": "23:12"
+            }
+        ]
+    },
+    "13号线": {
+        "name": "广州地铁13号线",
+        "desc": "鱼珠 ↔ 新沙",
+        "stations": [
+            {
+                "station_name": "鱼珠",
+                "lat": 23.1024,
+                "lon": 113.4108,
+                "first_up": "06:15",
+                "last_up": "23:45",
+                "first_down": "06:00",
+                "last_down": "22:30"
+            },
+            {
+                "station_name": "裕丰围",
+                "lat": 23.0927,
+                "lon": 113.4245,
+                "first_up": "06:18",
+                "last_up": "23:48",
+                "first_down": "05:57",
+                "last_down": "22:27"
+            },
+            {
+                "station_name": "双岗",
+                "lat": 23.0836,
+                "lon": 113.4382,
+                "first_up": "06:21",
+                "last_up": "23:51",
+                "first_down": "05:54",
+                "last_down": "22:24"
+            },
+            {
+                "station_name": "南海神庙",
+                "lat": 23.0741,
+                "lon": 113.4521,
+                "first_up": "06:24",
+                "last_up": "23:54",
+                "first_down": "05:51",
+                "last_down": "22:21"
+            },
+            {
+                "station_name": "夏园",
+                "lat": 23.0627,
+                "lon": 113.4653,
+                "first_up": "06:28",
+                "last_up": "23:58",
+                "first_down": "05:47",
+                "last_down": "22:17"
+            },
+            {
+                "station_name": "南岗",
+                "lat": 23.0489,
+                "lon": 113.4784,
+                "first_up": "06:32",
+                "last_up": "00:02",
+                "first_down": "05:43",
+                "last_down": "22:13"
+            },
+            {
+                "station_name": "沙村",
+                "lat": 23.0347,
+                "lon": 113.4912,
+                "first_up": "06:35",
+                "last_up": "00:05",
+                "first_down": "05:40",
+                "last_down": "22:10"
+            },
+            {
+                "station_name": "白江",
+                "lat": 23.0176,
+                "lon": 113.5041,
+                "first_up": "06:39",
+                "last_up": "00:09",
+                "first_down": "05:36",
+                "last_down": "22:06"
+            },
+            {
+                "station_name": "新塘",
+                "lat": 23.0031,
+                "lon": 113.5173,
+                "first_up": "06:42",
+                "last_up": "00:12",
+                "first_down": "05:33",
+                "last_down": "22:03"
+            },
+            {
+                "station_name": "新沙",
+                "lat": 22.9864,
+                "lon": 113.5305,
+                "first_up": "06:45",
+                "last_up": "00:15",
+                "first_down": "05:30",
+                "last_down": "22:00"
+            }
+        ]
+    },
+    "14号线": {
+        "name": "广州地铁14号线",
+        "desc": "嘉禾望岗 ↔ 东风；知识城支线：新和 ↔ 镇龙",
+        "stations": [
+            {
+                "station_name": "嘉禾望岗",
+                "lat": 23.2106,
+                "lon": 113.2707,
+                "first_up": "06:00",
+                "last_up": "22:50",
+                "first_down": "06:00",
+                "last_down": "22:30"
+            },
+            {
+                "station_name": "白云东平",
+                "lat": 23.2441,
+                "lon": 113.2813,
+                "first_up": "06:06",
+                "last_up": "22:56",
+                "first_down": "05:54",
+                "last_down": "22:24"
+            },
+            {
+                "station_name": "夏良",
+                "lat": 23.2683,
+                "lon": 113.2906,
+                "first_up": "06:10",
+                "last_up": "23:00",
+                "first_down": "05:50",
+                "last_down": "22:20"
+            },
+            {
+                "station_name": "太和",
+                "lat": 23.2924,
+                "lon": 113.2997,
+                "first_up": "06:14",
+                "last_up": "23:04",
+                "first_down": "05:46",
+                "last_down": "22:16"
+            },
+            {
+                "station_name": "竹料",
+                "lat": 23.3376,
+                "lon": 113.3142,
+                "first_up": "06:20",
+                "last_up": "23:10",
+                "first_down": "05:40",
+                "last_down": "22:10"
+            },
+            {
+                "station_name": "钟落潭",
+                "lat": 23.3748,
+                "lon": 113.3267,
+                "first_up": "06:26",
+                "last_up": "23:16",
+                "first_down": "05:34",
+                "last_down": "22:04"
+            },
+            {
+                "station_name": "马沥",
+                "lat": 23.4102,
+                "lon": 113.3381,
+                "first_up": "06:31",
+                "last_up": "23:21",
+                "first_down": "05:29",
+                "last_down": "21:59"
+            },
+            {
+                "station_name": "新和",
+                "lat": 23.4457,
+                "lon": 113.3494,
+                "first_up": "06:36",
+                "last_up": "23:26",
+                "first_down": "05:24",
+                "last_down": "21:54"
+            },
+            {
+                "station_name": "太平",
+                "lat": 23.4784,
+                "lon": 113.3586,
+                "first_up": "06:40",
+                "last_up": "23:30",
+                "first_down": "05:20",
+                "last_down": "21:50"
+            },
+            {
+                "station_name": "神岗",
+                "lat": 23.5097,
+                "lon": 113.3672,
+                "first_up": "06:44",
+                "last_up": "23:34",
+                "first_down": "05:16",
+                "last_down": "21:46"
+            },
+            {
+                "station_name": "赤草",
+                "lat": 23.5412,
+                "lon": 113.3754,
+                "first_up": "06:48",
+                "last_up": "23:38",
+                "first_down": "05:12",
+                "last_down": "21:42"
+            },
+            {
+                "station_name": "从化客运站",
+                "lat": 23.5746,
+                "lon": 113.3837,
+                "first_up": "06:53",
+                "last_up": "23:43",
+                "first_down": "05:07",
+                "last_down": "21:37"
+            },
+            {
+                "station_name": "东风",
+                "lat": 23.5927,
+                "lon": 113.3886,
+                "first_up": "06:56",
+                "last_up": "23:46",
+                "first_down": "05:04",
+                "last_down": "21:34"
+            },
+            {
+                "station_name": "知识城",
+                "lat": 23.4247,
+                "lon": 113.4126,
+                "first_up": "06:10",
+                "last_up": "23:00",
+                "first_down": "06:00",
+                "last_down": "22:50"
+            },
+            {
+                "station_name": "镇龙",
+                "lat": 23.3621,
+                "lon": 113.4603,
+                "first_up": "06:20",
+                "last_up": "23:10",
+                "first_down": "05:50",
+                "last_down": "22:40"
+            }
+        ]
+    },
+    "18号线": {
+        "name": "广州地铁18号线",
+        "desc": "冼村 ↔ 万顷沙",
+        "stations": [
+            {
+                "station_name": "冼村",
+                "lat": 23.1244,
+                "lon": 113.3201,
+                "first_up": "06:15",
+                "last_up": "23:30",
+                "first_down": "06:00",
+                "last_down": "22:30"
+            },
+            {
+                "station_name": "磨碟沙",
+                "lat": 23.1056,
+                "lon": 113.3184,
+                "first_up": "06:20",
+                "last_up": "23:35",
+                "first_down": "05:55",
+                "last_down": "22:25"
+            },
+            {
+                "station_name": "龙潭",
+                "lat": 23.0648,
+                "lon": 113.2879,
+                "first_up": "06:26",
+                "last_up": "23:41",
+                "first_down": "05:49",
+                "last_down": "22:19"
+            },
+            {
+                "station_name": "沙溪",
+                "lat": 23.0307,
+                "lon": 113.2724,
+                "first_up": "06:31",
+                "last_up": "23:46",
+                "first_down": "05:44",
+                "last_down": "22:14"
+            },
+            {
+                "station_name": "南村万博",
+                "lat": 23.0124,
+                "lon": 113.2607,
+                "first_up": "06:35",
+                "last_up": "23:50",
+                "first_down": "05:40",
+                "last_down": "22:10"
+            },
+            {
+                "station_name": "番禺广场",
+                "lat": 22.9472,
+                "lon": 113.3527,
+                "first_up": "06:42",
+                "last_up": "23:57",
+                "first_down": "05:33",
+                "last_down": "22:03"
+            },
+            {
+                "station_name": "横沥",
+                "lat": 22.8174,
+                "lon": 113.4436,
+                "first_up": "06:52",
+                "last_up": "00:07",
+                "first_down": "05:23",
+                "last_down": "21:53"
+            },
+            {
+                "station_name": "万顷沙",
+                "lat": 22.7143,
+                "lon": 113.5347,
+                "first_up": "06:00",
+                "last_up": "00:12",
+                "first_down": "05:18",
+                "last_down": "21:48"
+            }
+        ]
+    },
+    "21号线": {
+        "name": "广州地铁21号线",
+        "desc": "天河公园 ↔ 增城广场",
+        "stations": [
+            {
+                "station_name": "天河公园",
+                "lat": 23.1274,
+                "lon": 113.3622,
+                "first_up": "06:00",
+                "last_up": "23:30",
+                "first_down": "06:00",
+                "last_down": "22:30"
+            },
+            {
+                "station_name": "棠东",
+                "lat": 23.1226,
+                "lon": 113.3784,
+                "first_up": "06:04",
+                "last_up": "23:34",
+                "first_down": "05:56",
+                "last_down": "22:26"
+            },
+            {
+                "station_name": "黄村",
+                "lat": 23.1173,
+                "lon": 113.3947,
+                "first_up": "06:08",
+                "last_up": "23:38",
+                "first_down": "05:52",
+                "last_down": "22:22"
+            },
+            {
+                "station_name": "大观南路",
+                "lat": 23.1082,
+                "lon": 113.4105,
+                "first_up": "06:12",
+                "last_up": "23:42",
+                "first_down": "05:48",
+                "last_down": "22:18"
+            },
+            {
+                "station_name": "神舟路",
+                "lat": 23.0967,
+                "lon": 113.4263,
+                "first_up": "06:16",
+                "last_up": "23:46",
+                "first_down": "05:44",
+                "last_down": "22:14"
+            },
+            {
+                "station_name": "科学城",
+                "lat": 23.0842,
+                "lon": 113.4421,
+                "first_up": "06:20",
+                "last_up": "23:50",
+                "first_down": "05:40",
+                "last_down": "22:10"
+            },
+            {
+                "station_name": "苏元",
+                "lat": 23.0713,
+                "lon": 113.4578,
+                "first_up": "06:24",
+                "last_up": "23:54",
+                "first_down": "05:36",
+                "last_down": "22:06"
+            },
+            {
+                "station_name": "水西",
+                "lat": 23.0546,
+                "lon": 113.4732,
+                "first_up": "06:28",
+                "last_up": "23:58",
+                "first_down": "05:32",
+                "last_down": "22:02"
+            },
+            {
+                "station_name": "长平",
+                "lat": 23.0374,
+                "lon": 113.4886,
+                "first_up": "06:32",
+                "last_up": "00:02",
+                "first_down": "05:28",
+                "last_down": "21:58"
+            },
+            {
+                "station_name": "金坑",
+                "lat": 23.0196,
+                "lon": 113.5037,
+                "first_up": "06:36",
+                "last_up": "00:06",
+                "first_down": "05:24",
+                "last_down": "21:54"
+            },
+            {
+                "station_name": "镇龙西",
+                "lat": 23.0017,
+                "lon": 113.5189,
+                "first_up": "06:40",
+                "last_up": "00:10",
+                "first_down": "05:20",
+                "last_down": "21:50"
+            },
+            {
+                "station_name": "镇龙",
+                "lat": 22.9841,
+                "lon": 113.5342,
+                "first_up": "06:44",
+                "last_up": "00:14",
+                "first_down": "05:16",
+                "last_down": "21:46"
+            },
+            {
+                "station_name": "中新",
+                "lat": 22.9663,
+                "lon": 113.5494,
+                "first_up": "06:48",
+                "last_up": "00:18",
+                "first_down": "05:12",
+                "last_down": "21:42"
+            },
+            {
+                "station_name": "坑贝",
+                "lat": 22.9484,
+                "lon": 113.5646,
+                "first_up": "06:52",
+                "last_up": "00:22",
+                "first_down": "05:08",
+                "last_down": "21:38"
+            },
+            {
+                "station_name": "凤岗",
+                "lat": 22.9307,
+                "lon": 113.5798,
+                "first_up": "06:56",
+                "last_up": "00:26",
+                "first_down": "05:04",
+                "last_down": "21:34"
+            },
+            {
+                "station_name": "增城广场",
+                "lat": 22.9124,
+                "lon": 113.5951,
+                "first_up": "07:00",
+                "last_up": "00:30",
+                "first_down": "05:00",
+                "last_down": "21:30"
+            }
+        ]
+    },
+    "22号线": {
+        "name": "广州地铁22号线",
+        "desc": "番禺广场 ↔ 陈头岗",
+        "stations": [
+            {
+                "station_name": "番禺广场",
+                "lat": 22.9472,
+                "lon": 113.3527,
+                "first_up": "06:00",
+                "last_up": "23:30",
+                "first_down": "06:00",
+                "last_down": "23:30"
+            },
+            {
+                "station_name": "市广路",
+                "lat": 22.9746,
+                "lon": 113.3147,
+                "first_up": "06:06",
+                "last_up": "23:36",
+                "first_down": "05:54",
+                "last_down": "23:24"
+            },
+            {
+                "station_name": "广州南站",
+                "lat": 22.9988,
+                "lon": 113.2692,
+                "first_up": "06:12",
+                "last_up": "23:42",
+                "first_down": "05:48",
+                "last_down": "23:18"
+            },
+            {
+                "station_name": "陈头岗",
+                "lat": 23.0241,
+                "lon": 113.2437,
+                "first_up": "06:18",
+                "last_up": "23:48",
+                "first_down": "05:42",
+                "last_down": "23:12"
+            }
+        ]
+    },
+    "广佛线": {
+        "name": "广州地铁广佛线",
+        "desc": "沥滘 ↔ 新城东",
+        "stations": [
+            {
+                "station_name": "沥滘",
+                "lat": 23.0584,
+                "lon": 113.3081,
+                "first_up": "06:00",
+                "last_up": "23:30",
+                "first_down": "06:00",
+                "last_down": "22:30"
+            },
+            {
+                "station_name": "南洲",
+                "lat": 23.0714,
+                "lon": 113.2896,
+                "first_up": "06:04",
+                "last_up": "23:34",
+                "first_down": "05:56",
+                "last_down": "22:26"
+            },
+            {
+                "station_name": "燕岗",
+                "lat": 23.0837,
+                "lon": 113.2714,
+                "first_up": "06:08",
+                "last_up": "23:38",
+                "first_down": "05:52",
+                "last_down": "22:22"
+            },
+            {
+                "station_name": "沙园",
+                "lat": 23.0947,
+                "lon": 113.2532,
+                "first_up": "06:12",
+                "last_up": "23:42",
+                "first_down": "05:48",
+                "last_down": "22:18"
+            },
+            {
+                "station_name": "鹤洞",
+                "lat": 23.0996,
+                "lon": 113.2347,
+                "first_up": "06:16",
+                "last_up": "23:46",
+                "first_down": "05:44",
+                "last_down": "22:14"
+            },
+            {
+                "station_name": "西塱",
+                "lat": 23.0641,
+                "lon": 113.2117,
+                "first_up": "06:20",
+                "last_up": "23:50",
+                "first_down": "05:40",
+                "last_down": "22:10"
+            },
+            {
+                "station_name": "菊树",
+                "lat": 23.0524,
+                "lon": 113.1972,
+                "first_up": "06:24",
+                "last_up": "23:54",
+                "first_down": "05:36",
+                "last_down": "22:06"
+            },
+            {
+                "station_name": "龙溪",
+                "lat": 23.0417,
+                "lon": 113.1824,
+                "first_up": "06:28",
+                "last_up": "23:58",
+                "first_down": "05:32",
+                "last_down": "22:02"
+            },
+            {
+                "station_name": "金融高新区",
+                "lat": 23.0304,
+                "lon": 113.1678,
+                "first_up": "06:32",
+                "last_up": "00:02",
+                "first_down": "05:28",
+                "last_down": "21:58"
+            },
+            {
+                "station_name": "千灯湖",
+                "lat": 23.0211,
+                "lon": 113.1531,
+                "first_up": "06:36",
+                "last_up": "00:06",
+                "first_down": "05:24",
+                "last_down": "21:54"
+            },
+            {
+                "station_name": "礌岗",
+                "lat": 23.0107,
+                "lon": 113.1384,
+                "first_up": "06:40",
+                "last_up": "00:10",
+                "first_down": "05:20",
+                "last_down": "21:50"
+            },
+            {
+                "station_name": "南桂路",
+                "lat": 23.0014,
+                "lon": 113.1237,
+                "first_up": "06:44",
+                "last_up": "00:14",
+                "first_down": "05:16",
+                "last_down": "21:46"
+            },
+            {
+                "station_name": "桂城",
+                "lat": 22.9927,
+                "lon": 113.1089,
+                "first_up": "06:48",
+                "last_up": "00:18",
+                "first_down": "05:12",
+                "last_down": "21:42"
+            },
+            {
+                "station_name": "朝安",
+                "lat": 22.9834,
+                "lon": 113.0942,
+                "first_up": "06:52",
+                "last_up": "00:22",
+                "first_down": "05:08",
+                "last_down": "21:38"
+            },
+            {
+                "station_name": "普君北路",
+                "lat": 22.9746,
+                "lon": 113.0794,
+                "first_up": "06:56",
+                "last_up": "00:26",
+                "first_down": "05:04",
+                "last_down": "21:34"
+            },
+            {
+                "station_name": "祖庙",
+                "lat": 22.9653,
+                "lon": 113.0647,
+                "first_up": "07:00",
+                "last_up": "00:30",
+                "first_down": "05:00",
+                "last_down": "21:30"
+            },
+            {
+                "station_name": "同济路",
+                "lat": 22.9567,
+                "lon": 113.0501,
+                "first_up": "07:04",
+                "last_up": "00:34",
+                "first_down": "04:56",
+                "last_down": "21:26"
+            },
+            {
+                "station_name": "季华园",
+                "lat": 22.9474,
+                "lon": 113.0354,
+                "first_up": "07:08",
+                "last_up": "00:38",
+                "first_down": "04:52",
+                "last_down": "21:22"
+            },
+            {
+                "station_name": "魁奇路",
+                "lat": 22.9381,
+                "lon": 113.0207,
+                "first_up": "07:12",
+                "last_up": "00:42",
+                "first_down": "04:48",
+                "last_down": "21:18"
+            },
+            {
+                "station_name": "新城东",
+                "lat": 22.9287,
+                "lon": 113.0061,
+                "first_up": "07:16",
+                "last_up": "00:46",
+                "first_down": "04:44",
+                "last_down": "21:14"
+            }
+        ]
+    }
+}
