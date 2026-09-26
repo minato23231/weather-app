@@ -3,16 +3,26 @@ from datetime import datetime, timedelta
 from zoneinfo import ZoneInfo
 import math
 import json
+from streamlit_geolocation import streamlit_geolocation
 
-# ========== 【最重要！必须放在所有streamlit代码最前面】 ==========
+# ========== 【初始化session_state 保存定位信息，跨刷新保留】 ==========
+if "user_lat" not in st.session_state:
+    st.session_state.user_lat = None
+if "user_lon" not in st.session_state:
+    st.session_state.user_lon = None
+if "nearest_station" not in st.session_state:
+    st.session_state.nearest_station = None
+if "distance_to_station" not in st.session_state:
+    st.session_state.distance_to_station = None
+
+# ========== 页面配置 ==========
 st.set_page_config(page_title="广州地铁赶车计算器", layout="wide")
 
-# ===================== 加载地铁数据库（适配【线路顶层】JSON） =====================
+# ===================== 加载地铁数据库 =====================
 with open("metro_data.json", "r", encoding="utf-8") as f:
     line_data = json.load(f)
 
-# ===================== 【广州地铁 各线路真实历史发车间隔配置】 =====================
-# 格式："线路名": {"peak":高峰间隔(分钟), "offpeak":平峰间隔(分钟)}
+# ===================== 线路发车间隔配置 =====================
 line_interval_config = {
     "1号线": {"peak": 2, "offpeak": 4},
     "2号线": {"peak": 2, "offpeak": 3},
@@ -32,15 +42,14 @@ line_interval_config = {
     "广佛线": {"peak":2.5, "offpeak":4},
 }
 
-# 进站固定耗时（从进入地铁站入口到走到月台，单位秒）
+# 进站固定耗时（入口走到月台）
 STATION_ENTER_TO_PLATFORM_SEC = 120
 
-# 预构建：全部站点字典（站名 -> 归属线路 + 站点信息，用于定位找最近站）
+# 构建全部站点字典
 station_all = {}
 for line_name, line_info in line_data.items():
     for st_info in line_info["stations"]:
         station_name = st_info["station_name"]
-        # 换乘站：同一个站点会存在多条线路
         if station_name not in station_all:
             station_all[station_name] = {
                 "lines": {}
@@ -49,14 +58,14 @@ for line_name, line_info in line_data.items():
         station_all[station_name]["lat"] = st_info["lat"]
         station_all[station_name]["lon"] = st_info["lon"]
 
-# 三档步行速度配置
+# 步行速度
 speed_map = {
     "悠悠慢走": 0.8,
     "正常步行": 1.2,
     "小步快跑": 1.8
 }
 
-# 节假日列表（月-日）
+# 节假日
 holiday_list = [
     "01-01",
     "01-29","01-30","01-31","02-01","02-02","02-03","02-04",
@@ -68,7 +77,7 @@ holiday_list = [
 
 # ===================== 工具函数 =====================
 def haversine(lat1, lon1, lat2, lon2):
-    """球面距离计算，单位米"""
+    """球面距离，单位米"""
     R = 6371000
     phi1 = math.radians(lat1)
     phi2 = math.radians(lat2)
@@ -89,10 +98,6 @@ def find_nearest_station(user_lat, user_lon):
     return nearest_name, min_dist
 
 def fuzzy_search_station(keyword:str, all_station_list):
-    """
-    站点模糊搜索：纯汉字包含匹配，不需要pypinyin库
-    输入"鹅岭"就能匹配飞鹅岭，自动去除多余空格
-    """
     kw = keyword.strip()
     if not kw:
         return all_station_list
@@ -103,7 +108,6 @@ def fuzzy_search_station(keyword:str, all_station_list):
     return result
 
 def get_beijing_now():
-    """唯一基准后台北京时间"""
     return datetime.now(tz=ZoneInfo("Asia/Shanghai"))
 
 def get_auto_security_time(now_dt:datetime):
@@ -113,7 +117,6 @@ def get_auto_security_time(now_dt:datetime):
     hour = now_dt.hour
     minute = now_dt.minute
     is_weekend = weekday >=5
-
     if is_holiday or is_weekend:
         return 1.5
     else:
@@ -124,7 +127,6 @@ def get_auto_security_time(now_dt:datetime):
         else:
             return 1.0
 
-# 根据当前时间 + 线路，自动获取真实发车间隔
 def get_line_interval(line_name:str, now_dt:datetime):
     month_day = now_dt.strftime("%m-%d")
     is_holiday = month_day in holiday_list
@@ -132,12 +134,9 @@ def get_line_interval(line_name:str, now_dt:datetime):
     hour = now_dt.hour
     minute = now_dt.minute
     is_weekend = weekday >=5
-
-    # 找不到线路配置默认4分钟
     cfg = line_interval_config.get(line_name, {"peak":2, "offpeak":4})
     if is_holiday or is_weekend:
         return cfg["offpeak"]
-    #工作日早晚高峰
     is_morning_rush = (7 <= hour <=9)
     is_evening_rush = (17 <= hour <=19 and minute <=30)
     if is_morning_rush or is_evening_rush:
@@ -145,236 +144,167 @@ def get_line_interval(line_name:str, now_dt:datetime):
     else:
         return cfg["offpeak"]
 
-def time_str_to_beijing_datetime(timestr: str, ref_dt: datetime):
+def time_str_to_datetime(timestr: str, ref_dt: datetime):
     if not timestr or timestr.strip() == "":
-        raise ValueError("首末班时间为空，请检查json数据")
+        raise ValueError("时间为空")
     parts = timestr.strip().split(":")
-    if len(parts) !=2:
-        raise ValueError(f"时间格式错误「{timestr}」，需要HH:MM")
     h, m = map(int, parts)
     return datetime(ref_dt.year, ref_dt.month, ref_dt.day, h, m, tzinfo=ZoneInfo("Asia/Shanghai"))
 
-# 生成当日模拟班次（基于首末班 + 自动获取线路高峰/平峰间隔）
 def gen_train_schedule(first_time:str, last_time:str, interval_min:float, ref_dt:datetime):
-    try:
-        trains = []
-        t_start = time_str_to_beijing_datetime(first_time, ref_dt)
-        t_end = time_str_to_beijing_datetime(last_time, ref_dt)
-        current = t_start
-        while current <= t_end:
-            trains.append(current.strftime("%H:%M"))
-            current += timedelta(minutes=interval_min)
-        return trains
-    except Exception as e:
-        st.error(f"班次生成失败：{e}")
-        return []
+    trains = []
+    t_start = time_str_to_datetime(first_time, ref_dt)
+    t_end = time_str_to_datetime(last_time, ref_dt)
+    current = t_start
+    while current <= t_end:
+        trains.append(current.strftime("%H:%M"))
+        current += timedelta(minutes=interval_min)
+    return trains
 
-def filter_train_schedule(train_time_str_list, now_beijing, arrive_platform_dt):
-    train_list = []
-    for t_str in train_time_str_list:
-        dt = time_str_to_beijing_datetime(t_str, now_beijing)
-        train_list.append((t_str, dt))
+def filter_train(train_list, now, arrive_platform):
+    train_data = []
+    for t in train_list:
+        dt = time_str_to_datetime(t, now)
+        train_data.append((t, dt))
     missed = []
     risky = []
     available = []
-    for t_str, dt in train_list:
-        if dt < now_beijing:
+    for t_str, dt in train_data:
+        if dt < now:
             missed.append((t_str, dt))
-        elif dt < arrive_platform_dt:
+        elif dt < arrive_platform:
             risky.append((t_str, dt))
         else:
             available.append((t_str, dt))
     latest_miss = missed[-1] if missed else None
-    latest_risky = risky[0] if risky else None
-    first_available = available[0] if available else None
-    second_available = available[1] if len(available)>=2 else None
-    has_future = len(risky) >0 or len(available) >0
-    return latest_miss, latest_risky, first_available, second_available, has_future
+    risky_next = risky[0] if risky else None
+    first_ok = available[0] if available else None
+    second_ok = available[1] if len(available)>=2 else None
+    has_future = len(risky) or len(available)
+    return latest_miss, risky_next, first_ok, second_ok, has_future
 
-# ===================== Streamlit页面 =====================
-
-# 前端JS时钟（仅页面展示，不参与计算）
-st.components.v1.html("""
-<script>
-setInterval(() => {
-    const now = new Date();
-    const beijing = new Date(now.toLocaleString("en-US", {timeZone: "Asia/Shanghai"}));
-    const y = beijing.getFullYear();
-    const m = String(beijing.getMonth() + 1).padStart(2, '0');
-    const d = String(beijing.getDate()).padStart(2, '0');
-    const hh = String(beijing.getHours()).padStart(2, '0');
-    const mm = String(beijing.getMinutes()).padStart(2, '0');
-    const ss = String(beijing.getSeconds()).padStart(2, '0');
-    document.getElementById("beijing-time").innerText =
-        `🕒 北京时间：${y}-${m}-${d} ${hh}:${mm}:${ss}`;
-}, 1000);
-</script>
-<div id="beijing-time" style="font-size:32px; font-weight:bold;"></div>
-""", height=70)
-
-# 定位JS，定位成功自动刷新页面
-st.components.v1.html("""
-<script>
-if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(pos => {
-        const lat = pos.coords.latitude;
-        const lon = pos.coords.longitude;
-        window.localStorage.setItem("geo_lat", lat);
-        window.localStorage.setItem("geo_lon", lon);
-        window.location.reload();
-    }, err => {
-        console.log("定位失败", err);
-    });
-}
-</script>
-""", height=0)
-
-# Session初始化
-if "selected_line" not in st.session_state:
-    st.session_state["selected_line"] = list(line_data.keys())[0]
-
-# 自动刷新开关
-auto_refresh = st.checkbox("开启60秒自动刷新（后台重新计算班次）", value=False)
-if auto_refresh:
-    st.components.v1.html("""<script>setInterval(()=>window.location.reload(),60000);</script>""", height=0)
-else:
-    st.caption("自动刷新已关闭，修改参数才更新结果")
-
+# ===================== UI页面 =====================
+# 北京时间显示
 now = get_beijing_now()
+st.markdown(f"# 🕒 当前北京时间：{now.strftime('%Y-%m-%d %H:%M:%S')}")
 st.divider()
 
-# ========== 定位模块 ==========
-col_loc1, col_loc2 = st.columns([1,1])
-with col_loc1:
-    use_loc = st.checkbox("使用浏览器定位，自动选择最近站点", value=False)
-with col_loc2:
-    st.info("定位成功页面自动刷新；公网部署需要HTTPS才能启用定位")
+# 定位按钮
+st.subheader("📍 获取当前位置")
+st.info("点击下面按钮，浏览器会请求位置权限，授权后自动寻找最近地铁站（部署到streamlit.cloud HTTPS环境生效）")
+location_result = streamlit_geolocation()
 
-# ========== 线路选择 ==========
+# 拿到定位结果，存入session_state
+if location_result and location_result.get("latitude"):
+    lat = location_result["latitude"]
+    lon = location_result["longitude"]
+    # 更新session
+    st.session_state.user_lat = lat
+    st.session_state.user_lon = lon
+    nearest_station_name, dist = find_nearest_station(lat, lon)
+    st.session_state.nearest_station = nearest_station_name
+    st.session_state.distance_to_station = dist
+    st.success(f"✅ 定位成功！最近站点：【{nearest_station_name}】，估算直线距离 {dist:.0f} m")
+
+# 线路选择
 line_list = list(line_data.keys())
+if "selected_line" not in st.session_state:
+    st.session_state["selected_line"] = line_list[0]
 selected_line = st.selectbox("【1】选择地铁线路", line_list, index=line_list.index(st.session_state["selected_line"]))
 st.session_state["selected_line"] = selected_line
 line_info = line_data[selected_line]
-st.markdown(f"**{line_info['name']} | {line_info['desc']}**")
 
-# ========== 模糊搜索站点（无pypinyin，汉字搜索） ==========
-search_key = st.text_input("🔍 模糊搜索站点（输入站点部分汉字，例：鹅岭 搜飞鹅岭）", "")
+# 站点搜索
+search_key = st.text_input("🔍 模糊搜索站点（输入站名，例如：花都）", "")
 all_station_names = list(station_all.keys())
 matched_stations = fuzzy_search_station(search_key, all_station_names)
 
-# 站点下拉框，只展示匹配到的站点
-if matched_stations:
-    selected_station = st.selectbox("【2】选择站点", matched_stations)
+# 如果定位成功，自动选中最近站点
+if st.session_state.nearest_station is not None:
+    if st.session_state.nearest_station in matched_stations:
+        selected_station = st.session_state.nearest_station
+    else:
+        selected_station = st.selectbox("【2】选择站点", matched_stations) if matched_stations else ""
 else:
-    st.warning("未找到匹配站点，请修改关键词")
-    selected_station = ""
+    selected_station = st.selectbox("【2】选择站点", matched_stations) if matched_stations else ""
 
-# 定位模式覆盖站点选择 & 自动计算距离
+# 站点信息处理
 walk_distance = 200.0
-user_lat = None
-user_lon = None
-if use_loc:
-    st.warning("浏览器弹出权限请求，请【允许位置】，定位成功页面自动刷新")
-    col_lat, col_lon = st.columns(2)
-    with col_lat:
-        lat_input = st.number_input("纬度", value=23.13, format="%.4f")
-    with col_lon:
-        lon_input = st.number_input("经度", value=113.31, format="%.4f")
-    user_lat = lat_input
-    user_lon = lon_input
-    nearest_station_name, dist = find_nearest_station(lat_input, lon_input)
-    st.success(f"✅ 根据坐标计算，最近站点：【{nearest_station_name}】，直线距离 {dist:.0f} 米")
-    selected_station = nearest_station_name
-    walk_distance = dist  # 自动赋值距离，不需要手动输入
-
-# 获取当前选中站点的全部信息（处理换乘站）
 if selected_station:
     station_meta = station_all[selected_station]
     station_line_names = list(station_meta["lines"].keys())
-    if len(station_line_names) > 1:
-        st.info(f"✅ {selected_station} 是换乘站，请选择线路")
+    if len(station_line_names) >1:
+        st.info(f"✅ {selected_station} 是换乘站，请选择对应线路")
         selected_line = st.selectbox("选择该站点的线路", station_line_names)
     else:
         selected_line = station_line_names[0]
     station_info = station_meta["lines"][selected_line]
 
-    # ========== 自动读取当前线路真实间隔 ==========
+    # 班次标题
     current_interval = get_line_interval(selected_line, now)
     st.subheader("🚇 班次信息")
     st.markdown(f"当前线路：**{selected_line}**，当前时段自动发车间隔：**{current_interval} 分钟**")
 
-    # 【核心改动】定位开启时隐藏距离输入框；关闭定位才允许手动输入
-    if not use_loc:
-        walk_distance = st.number_input("当前位置 → 地铁站入口 的步行距离（米）", min_value=0.0, value=200.0, step=10.0)
+    # 距离：定位成功就自动使用，否则手动输入
+    if st.session_state.distance_to_station is not None:
+        walk_distance = st.session_state.distance_to_station
+        st.markdown(f"📏 当前位置到【{selected_station}】估算步行距离：**{walk_distance:.0f} 米（定位自动计算）**")
     else:
-        st.markdown(f"📏 当前位置到【{selected_station}】估算步行距离：**{walk_distance:.0f} 米（定位自动计算，不可手动修改）**")
+        walk_distance = st.number_input("当前位置 → 地铁站入口 的步行距离（米）", min_value=0.0, value=200.0, step=10.0)
 
     speed_label = st.selectbox("步行速度", list(speed_map.keys()), index=1)
     walk_speed = speed_map[speed_label]
 
-    # 后台时间计算全部基于now
+    # 时间计算
     auto_security_min = get_auto_security_time(now)
     auto_security_sec = auto_security_min * 60
     walk_to_entrance_sec = walk_distance / walk_speed
-    # 总耗时 = 走到入口 + 进站到月台固定耗时 + 安检
     total_need_sec = walk_to_entrance_sec + STATION_ENTER_TO_PLATFORM_SEC + auto_security_sec
     arrive_platform_time = now + timedelta(seconds=total_need_sec)
 
     st.subheader("📋 时间预估")
     st.write(f"走到地铁站入口耗时：{walk_to_entrance_sec/60:.1f} 分钟")
     st.write(f"进站步行至月台固定耗时：{STATION_ENTER_TO_PLATFORM_SEC/60:.1f} 分钟")
-    st.write(f"🔍 安检预估：{auto_security_min:.1f} 分钟（根据时段/周末/节假日动态计算）")
+    st.write(f"🔍 安检预估：{auto_security_min:.1f} 分钟")
     st.write(f"✅ 预计到达月台时间：{arrive_platform_time.strftime('%H:%M:%S')}")
 
     st.divider()
     col1, col2 = st.columns(2)
     with col1:
-        st.subheader("⬆️ dirA 方向（上行）")
+        st.subheader("⬆️ 上行方向")
         up_trains = gen_train_schedule(station_info["dirA_first"], station_info["dirA_last"], current_interval, now)
-        latest_miss, latest_risky, first_available, second_available, has_future = filter_train_schedule(
-            up_trains, now, arrive_platform_time
-        )
+        latest_miss, risky_next, first_ok, second_ok, has_future = filter_train(up_trains, now, arrive_platform_time)
         if latest_miss:
-            t_str, dt = latest_miss
-            st.error(f"❌ 最近已错过：{t_str}")
-        if latest_risky:
-            t_str, dt = latest_risky
-            remain_min = (dt - now).total_seconds() / 60
-            st.warning(f"⚠️ 有可能错过：{t_str}，距离到站还有 {remain_min:.1f} 分钟")
-        if first_available:
-            t_str, dt = first_available
-            remain_min = (dt - arrive_platform_time).total_seconds() / 60
-            st.success(f"✅ 可以赶上：{t_str}，到站后剩余 {remain_min:.1f} 分钟")
-        if second_available:
-            t_str, dt = second_available
-            remain_min = (dt - arrive_platform_time).total_seconds() / 60
-            st.info(f"📌 备选班次：{t_str}，到站后剩余 {remain_min:.1f} 分钟")
+            st.error(f"❌ 最近已错过：{latest_miss[0]}")
+        if risky_next:
+            rem = (risky_next[1] - now).total_seconds()/60
+            st.warning(f"⚠️ 有可能错过：{risky_next[0]}，距离到站还有 {rem:.1f} 分钟")
+        if first_ok:
+            rem = (first_ok[1] - arrive_platform_time).total_seconds()/60
+            st.success(f"✅ 可以赶上：{first_ok[0]}，到站后剩余 {rem:.1f} 分钟")
+        if second_ok:
+            rem = (second_ok[1] - arrive_platform_time).total_seconds()/60
+            st.info(f"📌 备选班次：{second_ok[0]}，到站后剩余 {rem:.1f} 分钟")
         if not has_future:
-            st.warning("⚠️ 当前时段暂无后续列车")
+            st.warning("⚠️ 当前时段无后续列车")
 
     with col2:
-        st.subheader("⬇️ dirB 方向（下行）")
+        st.subheader("⬇️ 下行方向")
         down_trains = gen_train_schedule(station_info["dirB_first"], station_info["dirB_last"], current_interval, now)
-        latest_miss, latest_risky, first_available, second_available, has_future = filter_train_schedule(
-            down_trains, now, arrive_platform_time
-        )
+        latest_miss, risky_next, first_ok, second_ok, has_future = filter_train(down_trains, now, arrive_platform_time)
         if latest_miss:
-            t_str, dt = latest_miss
-            st.error(f"❌ 最近已错过：{t_str}")
-        if latest_risky:
-            t_str, dt = latest_risky
-            remain_min = (dt - now).total_seconds() / 60
-            st.warning(f"⚠️ 有可能错过：{t_str}，距离到站还有 {remain_min:.1f} 分钟")
-        if first_available:
-            t_str, dt = first_available
-            remain_min = (dt - arrive_platform_time).total_seconds() / 60
-            st.success(f"✅ 可以赶上：{t_str}，到站后剩余 {remain_min:.1f} 分钟")
-        if second_available:
-            t_str, dt = second_available
-            remain_min = (dt - arrive_platform_time).total_seconds() / 60
-            st.info(f"📌 备选班次：{t_str}，到站后剩余 {remain_min:.1f} 分钟")
+            st.error(f"❌ 最近已错过：{latest_miss[0]}")
+        if risky_next:
+            rem = (risky_next[1] - now).total_seconds()/60
+            st.warning(f"⚠️ 有可能错过：{risky_next[0]}，距离到站还有 {rem:.1f} 分钟")
+        if first_ok:
+            rem = (first_ok[1] - arrive_platform_time).total_seconds()/60
+            st.success(f"✅ 可以赶上：{first_ok[0]}，到站后剩余 {rem:.1f} 分钟")
+        if second_ok:
+            rem = (second_ok[1] - arrive_platform_time).total_seconds()/60
+            st.info(f"📌 备选班次：{second_ok[0]}，到站后剩余 {rem:.1f} 分钟")
         if not has_future:
-            st.warning("⚠️ 当前时段暂无后续列车")
+            st.warning("⚠️ 当前时段无后续列车")
 
 st.divider()
-st.caption("说明：时刻表由首末班+线路历史高峰/平峰间隔自动生成；直线距离为估算，实际步行道路距离会更长；所有逻辑计算使用Python后台北京时间。定位+模糊搜索双重站点选择。")
+st.caption("说明：距离为球面直线估算，实际步行道路距离会更长；部署在https域名下定位功能正常。")
