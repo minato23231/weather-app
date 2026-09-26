@@ -5,7 +5,7 @@ import math
 import json
 from streamlit_geolocation import streamlit_geolocation
 
-# ========== 【初始化session_state 保存定位信息，跨刷新保留】 ==========
+# ========== 【session_state初始化】 ==========
 if "user_lat" not in st.session_state:
     st.session_state.user_lat = None
 if "user_lon" not in st.session_state:
@@ -14,6 +14,8 @@ if "nearest_station" not in st.session_state:
     st.session_state.nearest_station = None
 if "distance_to_station" not in st.session_state:
     st.session_state.distance_to_station = None
+if "auto_select" not in st.session_state:
+    st.session_state.auto_select = False
 
 # ========== 页面配置 ==========
 st.set_page_config(page_title="广州地铁赶车计算器", layout="wide")
@@ -42,7 +44,7 @@ line_interval_config = {
     "广佛线": {"peak":2.5, "offpeak":4},
 }
 
-# 进站固定耗时（入口走到月台）
+# 进站固定耗时（入口走到月台，秒）
 STATION_ENTER_TO_PLATFORM_SEC = 120
 
 # 构建全部站点字典
@@ -58,14 +60,14 @@ for line_name, line_info in line_data.items():
         station_all[station_name]["lat"] = st_info["lat"]
         station_all[station_name]["lon"] = st_info["lon"]
 
-# 步行速度
+# 步行速度选项
 speed_map = {
     "悠悠慢走": 0.8,
     "正常步行": 1.2,
     "小步快跑": 1.8
 }
 
-# 节假日
+# 节假日列表
 holiday_list = [
     "01-01",
     "01-29","01-30","01-31","02-01","02-02","02-03","02-04",
@@ -184,60 +186,64 @@ def filter_train(train_list, now, arrive_platform):
     return latest_miss, risky_next, first_ok, second_ok, has_future
 
 # ===================== UI页面 =====================
-# 北京时间显示
 now = get_beijing_now()
 st.markdown(f"# 🕒 当前北京时间：{now.strftime('%Y-%m-%d %H:%M:%S')}")
 st.divider()
 
-# 定位按钮
+# 定位模块
 st.subheader("📍 获取当前位置")
-st.info("点击下面按钮，浏览器会请求位置权限，授权后自动寻找最近地铁站（部署到streamlit.cloud HTTPS环境生效）")
+st.info("点击定位按钮，浏览器授权后，**自动切换线路+站点，加载该站上下行时刻表**")
 location_result = streamlit_geolocation()
 
-# 拿到定位结果，存入session_state
+# 定位成功处理
 if location_result and location_result.get("latitude"):
     lat = location_result["latitude"]
     lon = location_result["longitude"]
-    # 更新session
     st.session_state.user_lat = lat
     st.session_state.user_lon = lon
     nearest_station_name, dist = find_nearest_station(lat, lon)
+    # 步行距离修正系数，直线距离 ×1.3，模拟道路步行距离
+    real_walk_dist = dist * 1.3
     st.session_state.nearest_station = nearest_station_name
-    st.session_state.distance_to_station = dist
-    st.success(f"✅ 定位成功！最近站点：【{nearest_station_name}】，估算直线距离 {dist:.0f} m")
+    st.session_state.distance_to_station = real_walk_dist
+    st.session_state.auto_select = True
+    st.success(f"✅ 定位成功！最近站点：【{nearest_station_name}】，估算步行距离 {real_walk_dist:.0f} m")
 
-# 线路选择
+# 拿到全部线路列表
 line_list = list(line_data.keys())
-if "selected_line" not in st.session_state:
-    st.session_state["selected_line"] = line_list[0]
-selected_line = st.selectbox("【1】选择地铁线路", line_list, index=line_list.index(st.session_state["selected_line"]))
-st.session_state["selected_line"] = selected_line
-line_info = line_data[selected_line]
+selected_line = ""
+selected_station = ""
 
-# 站点搜索
-search_key = st.text_input("🔍 模糊搜索站点（输入站名，例如：花都）", "")
-all_station_names = list(station_all.keys())
-matched_stations = fuzzy_search_station(search_key, all_station_names)
-
-# 如果定位成功，自动选中最近站点
-if st.session_state.nearest_station is not None:
-    if st.session_state.nearest_station in matched_stations:
-        selected_station = st.session_state.nearest_station
-    else:
-        selected_station = st.selectbox("【2】选择站点", matched_stations) if matched_stations else ""
+# 如果定位成功，自动选中线路和站点
+if st.session_state.auto_select and st.session_state.nearest_station:
+    auto_station_name = st.session_state.nearest_station
+    station_meta = station_all[auto_station_name]
+    station_lines = list(station_meta["lines"].keys())
+    # 默认取第一条线路（换乘站可以后续手动切换）
+    auto_line = station_lines[0]
+    # 自动选中线路
+    line_index = line_list.index(auto_line)
+    selected_line = st.selectbox("【1】选择地铁线路", line_list, index=line_index)
+    # 该线路下的全部站点
+    station_list_this_line = [s["station_name"] for s in line_data[selected_line]["stations"]]
+    # 自动选中最近站点
+    station_index = station_list_this_line.index(auto_station_name)
+    selected_station = st.selectbox("【2】选择站点", station_list_this_line, index=station_index)
 else:
-    selected_station = st.selectbox("【2】选择站点", matched_stations) if matched_stations else ""
+    # 没有定位，手动选择线路和站点
+    selected_line = st.selectbox("【1】选择地铁线路", line_list)
+    station_list_this_line = [s["station_name"] for s in line_data[selected_line]["stations"]]
+    selected_station = st.selectbox("【2】选择站点", station_list_this_line)
 
-# 站点信息处理
+# 站点数据处理
 walk_distance = 200.0
 if selected_station:
     station_meta = station_all[selected_station]
     station_line_names = list(station_meta["lines"].keys())
+    # 如果是换乘站
     if len(station_line_names) >1:
         st.info(f"✅ {selected_station} 是换乘站，请选择对应线路")
         selected_line = st.selectbox("选择该站点的线路", station_line_names)
-    else:
-        selected_line = station_line_names[0]
     station_info = station_meta["lines"][selected_line]
 
     # 班次标题
@@ -245,10 +251,10 @@ if selected_station:
     st.subheader("🚇 班次信息")
     st.markdown(f"当前线路：**{selected_line}**，当前时段自动发车间隔：**{current_interval} 分钟**")
 
-    # 距离：定位成功就自动使用，否则手动输入
+    # 距离
     if st.session_state.distance_to_station is not None:
         walk_distance = st.session_state.distance_to_station
-        st.markdown(f"📏 当前位置到【{selected_station}】估算步行距离：**{walk_distance:.0f} 米（定位自动计算）**")
+        st.markdown(f"📏 当前位置到【{selected_station}】估算步行距离：**{walk_distance:.0f} 米（定位自动计算，已乘1.3道路修正）**")
     else:
         walk_distance = st.number_input("当前位置 → 地铁站入口 的步行距离（米）", min_value=0.0, value=200.0, step=10.0)
 
@@ -307,4 +313,4 @@ if selected_station:
             st.warning("⚠️ 当前时段无后续列车")
 
 st.divider()
-st.caption("说明：距离为球面直线估算，实际步行道路距离会更长；部署在https域名下定位功能正常。")
+st.caption("说明：距离为估算步行距离（直线×1.3）；定位成功后自动切换线路与站点，自动加载上下行时刻表。")
